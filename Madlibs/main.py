@@ -38,9 +38,9 @@ else:
     punc = 'th'
 
 #story
-print str(number) + " blind "  + animal + ", " + str(number) + " blind "  + animal + "."
+print str(numbers_list[0]) + " blind "  + animal + ", " + str(numbers_list[0]) + " blind "  + animal + "."
 print ", See how they run, see how they run."
-print "They all ran after the "+ occupation +"'s " + str(wives) + str(punc) + " wife."
-print "Who cut off their tails with " + knives + " " + adjective + " knives."
+print "They all ran after the "+ occupation +"'s " + str(numbers_list[2]) + str(punc) + " wife."
+print "Who cut off their tails with " + str(numbers_list[1]) + " " + adjective + " knives."
 print" Did you ever see such a thing in your life."
-print "As " + str(number) + " blind " + animal
+print "As " + str(numbers_list[0]) + " blind " + animal
