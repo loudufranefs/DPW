@@ -1,10 +1,10 @@
 '''
 Name:Loubna Dufrane
-Date:08/07/1977
-Assignment: Madlibs
+Date:08/07/2014
+Assignment: Mad libs
 Class: Design Patterns for Web Programming
 
-Madlibs from nursery rhyme -
+Mad libs from nursery rhyme -
 Three blind mice
 '''
 
@@ -37,10 +37,16 @@ elif int(numbers_list[2]) == 3:
 else:
     punc = 'th'
 
+#condition with logical operator
+if (int(numbers_list[1]) == 0  or int(numbers_list[1]) == 1):
+    knife = 'knife'
+else:
+    knife = 'knives'
+
 #story
 print str(numbers_list[0]) + " blind "  + animal + ", " + str(numbers_list[0]) + " blind "  + animal + "."
 print ", See how they run, see how they run."
 print "They all ran after the "+ occupation +"'s " + str(numbers_list[2]) + str(punc) + " wife."
-print "Who cut off their tails with " + str(numbers_list[1]) + " " + adjective + " knives."
+print "Who cut off their tails with " + str(numbers_list[1]) + " " + adjective + " " + knife + "."
 print" Did you ever see such a thing in your life."
 print "As " + str(numbers_list[0]) + " blind " + animal
