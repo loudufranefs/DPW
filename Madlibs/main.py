@@ -5,19 +5,13 @@ Assignment: Madlibs
 Class: Design Patterns for Web Programming
 
 Madlibs from nursery rhyme -
-Three blind mice, three blind mice,
-See how they run, see how they run,
-They all ran after the farmer's wife,
-Who cut off their tails with a carving knife,
-Did you ever see such a thing in your life,
-As three blind mice?
-
+Three blind mice
 '''
 
-#Variables
+#Global Variables
 punc = ''
 
-# Inputs - 3 strings and 3 numbers
+# Inputs - 3 strings and 4 numbers
 animal = raw_input("Type in animal in plural:   ")
 occupation = raw_input("Type in a profession:  ")
 adjective = raw_input("Type in an adjective.  ")
@@ -43,6 +37,10 @@ elif int(numbers_list[2]) == 3:
 else:
     punc = 'th'
 
-
 #story
-print str(number) + " blind "  + animal + ", " + str(number) + " blind "  + animal + ", See how they run, see how they run, They all ran after the "+ occupation +"'s " + str(wives) + str(punc) + " wife, Who cut off their tails with " + knives + " " + adjective + " knives, Did you ever see such a thing in your life, As " + str(number) + " blind " + animal
+print str(number) + " blind "  + animal + ", " + str(number) + " blind "  + animal + "."
+print ", See how they run, see how they run."
+print "They all ran after the "+ occupation +"'s " + str(wives) + str(punc) + " wife."
+print "Who cut off their tails with " + knives + " " + adjective + " knives."
+print" Did you ever see such a thing in your life."
+print "As " + str(number) + " blind " + animal
