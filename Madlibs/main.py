@@ -26,15 +26,19 @@ wives = raw_input("Type in any number:  ")
 knives = raw_input("Type in another number from 2 to 10:  ")
 year = raw_input ("Type in a year: ")
 
+
 #add number variables into array
 numbers_list = [number, knives, wives, year]
 
+#calculate age
+age = 2014 - int(numbers_list[3])
+
 #conditions
-if int(wives) == 1:
+if int(numbers_list[2]) == 1:
     punc = 'st'
-elif int(wives) == 2:
+elif int(numbers_list[2]) == 2:
     punc = 'nd'
-elif int(wives) == 3:
+elif int(numbers_list[2]) == 3:
     punc = 'rd'
 else:
     punc = 'th'
