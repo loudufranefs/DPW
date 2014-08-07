@@ -24,9 +24,10 @@ adjective = raw_input("Type in an adjective.  ")
 number = raw_input("Type in a number from 2 to 10 ")
 wives = raw_input("Type in any number:  ")
 knives = raw_input("Type in another number from 2 to 10:  ")
+year = raw_input ("Type in a year: ")
 
 #add number variables into array
-numbers_list = [number, knives, wives]
+numbers_list = [number, knives, wives, year]
 
 #conditions
 if int(wives) == 1:
