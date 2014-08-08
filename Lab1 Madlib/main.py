@@ -1,7 +1,7 @@
 '''
 Name:Loubna Dufrane
 Date:08/07/2014
-Assignment: Mad libs
+Assignment: Lab1 Madlibs
 Class: Design Patterns for Web Programming
 
 Mad libs from nursery rhyme -
