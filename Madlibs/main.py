@@ -49,9 +49,15 @@ else:
 #dictionary
 dict = {'sight': 'blind', 'action': 'run', 'years' : age}
 
-#print madlibs
-print str(total_animals) + " " + dict['sight'] + " " + animal + ", " + str(total_animals) + " " + dict['sight'] + " " + animal + "."
-print "See how they " + dict['action'] + ", see how they " + dict['action'] + "."
+'''
+Print Mad libs
+'''
+#creating loops for repetitive code
+for x in range(0, 2):
+    print str(total_animals) + " " +  dict['sight'] + " "  + animal + ". "
+for y in range(0, 2):
+    print "See how they " + dict['action'] + ", see how they " + dict['action'] + "."
+
 print "They all ran after the "+ occupation + "'s " + str(numbers_list[2]) + str(punc) + " "  + str(dict['years']) +  " year old wife."
 print "Who cut off their tails with " + str(numbers_list[1]) + " " + adjective + " " + knife + "."
 print"Did you ever see such a thing in your life."
