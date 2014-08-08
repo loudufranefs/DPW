@@ -21,7 +21,7 @@ knives = raw_input("Type in another number from 2 to 10:  ")
 year = raw_input ("Type in a year: ")
 
 
-#add number variables into array
+#add number variables into an array
 numbers_list = [number, knives, wives, year]
 
 #calculate age - using mathematical operator
@@ -49,15 +49,19 @@ else:
 #dictionary
 dict = {'sight': 'blind', 'action': 'run', 'years' : age}
 
+#function to print loop
+def printLoop(loop):
+#creating loops for repetitive code
+    for x in range(0, loop):
+        print str(total_animals) + " " +  dict['sight'] + " "  + animal + ". "
+    for y in range(0, loop):
+        print "See how they " + dict['action'] + ", see how they " + dict['action'] + "."
+    return
 '''
 Print Mad libs
 '''
-#creating loops for repetitive code
-for x in range(0, 2):
-    print str(total_animals) + " " +  dict['sight'] + " "  + animal + ". "
-for y in range(0, 2):
-    print "See how they " + dict['action'] + ", see how they " + dict['action'] + "."
-
+#call function
+printLoop(2)
 print "They all ran after the "+ occupation + "'s " + str(numbers_list[2]) + str(punc) + " "  + str(dict['years']) +  " year old wife."
 print "Who cut off their tails with " + str(numbers_list[1]) + " " + adjective + " " + knife + "."
 print"Did you ever see such a thing in your life."
