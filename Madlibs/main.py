@@ -27,7 +27,10 @@ numbers_list = [number, knives, wives, year]
 #calculate age - using mathematical operator
 age = 2014 - int(numbers_list[3])
 
-#conditions
+#add another animal to the mix - using 2nd mathematical operator
+total_animals = int(numbers_list[0]) + 1
+
+#condition - check ordinal number
 if int(numbers_list[2]) == 1:
     punc = 'st'
 elif int(numbers_list[2]) == 2:
@@ -37,7 +40,7 @@ elif int(numbers_list[2]) == 3:
 else:
     punc = 'th'
 
-#condition with logical operator
+#condition with logical operator - check to change noun to plural
 if (int(numbers_list[1]) == 0  or int(numbers_list[1]) == 1):
     knife = 'knife'
 else:
@@ -46,10 +49,10 @@ else:
 #dictionary
 dict = {'sight': 'blind', 'action': 'run', 'years' : age}
 
-#story
-print str(numbers_list[0]) + " " + dict['sight'] + " " + animal + ", " + str(numbers_list[0]) + " " + dict['sight'] + " " + animal + "."
+#print madlibs
+print str(total_animals) + " " + dict['sight'] + " " + animal + ", " + str(total_animals) + " " + dict['sight'] + " " + animal + "."
 print "See how they " + dict['action'] + ", see how they " + dict['action'] + "."
-print "They all ran after the "+ occupation +"'s " + str(numbers_list[2]) + str(punc) + " "  + dict['years'] +  " year old wife."
+print "They all ran after the "+ occupation + "'s " + str(numbers_list[2]) + str(punc) + " "  + str(dict['years']) +  " year old wife."
 print "Who cut off their tails with " + str(numbers_list[1]) + " " + adjective + " " + knife + "."
-print" Did you ever see such a thing in your life."
-print "As " + str(numbers_list[0]) + " blind " + animal
+print"Did you ever see such a thing in your life."
+print "As " + str(total_animals) + " " + dict['sight'] + " " + animal
