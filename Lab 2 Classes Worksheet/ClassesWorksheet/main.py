@@ -24,6 +24,13 @@ class Nurse(object):
         self.hospital_name = ""
         self.hospital_floor = ""
 
+    def check_patient(self):
+        pass
+    def give_medication(self):
+        pass
+    def transfer_patient(self):
+        pass
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
