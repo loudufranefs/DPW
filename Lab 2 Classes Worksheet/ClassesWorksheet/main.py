@@ -39,13 +39,23 @@ class Patient(object):
         self.hospital_room = ""
         self.age = ""
         self.medical_issue = ""
-        
+        self.hospital_entry_date = ""
+        self.hospital_release_date = ""
+
     def take_medication(self):
         pass
     def sleep(self):
         pass
     def call_nurse(self):
         pass
+
+class Visitor(object):
+    def __init__(self):
+        self.name = ""
+        self.patient_visiting = ""
+        self.hospital_room = ""
+
+
 
 
 app = webapp2.WSGIApplication([
