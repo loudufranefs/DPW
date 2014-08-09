@@ -7,8 +7,9 @@ class MainHandler(webapp2.RequestHandler):
 class Doctor(object):
     def __init__(self):
         self.name = ""
-        self.specialty = ""
+        self.medical_field = ""
         self.hospital_name = ""
+        self.amount_patients = ""
         
     def diagnose_patient(self):
         pass
@@ -30,6 +31,15 @@ class Nurse(object):
         pass
     def transfer_patient(self):
         pass
+
+class Patient(object):
+    def __init__(self):
+        self.name = ""
+        self.hospital_name = ""
+        self.hospital_room = ""
+        self.age = ""
+        self.medical_issue = ""
+
 
 
 app = webapp2.WSGIApplication([
