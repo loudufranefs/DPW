@@ -1,9 +1,17 @@
+'''
+Name: Loubna Dufrane
+Date: 8/9/2014
+Assignment: Lab2 Classes Worksheet
+Class: Designing for Web Programming
+'''
 import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Hello world!')
-
+'''
+Hospital Scenario
+'''
 class Doctor(object):
     def __init__(self):
         self.name = ""
@@ -54,9 +62,14 @@ class Visitor(object):
         self.name = ""
         self.patient_visiting = ""
         self.hospital_room = ""
+        self.date_visiting = ""
 
-
-
+    def visit_patient(self):
+        pass
+    def buy_flowers(self):
+        pass
+    def sympathise(self):
+        pass
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
