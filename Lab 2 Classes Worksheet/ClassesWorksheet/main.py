@@ -9,7 +9,13 @@ class Doctor(object):
         self.name = ""
         self.specialty = ""
         self.hospital = ""
-
+        
+    def diagnose_patient(self):
+        pass
+    def visit_patient(self):
+        pass
+    def run_analysis(self):
+        pass
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)
