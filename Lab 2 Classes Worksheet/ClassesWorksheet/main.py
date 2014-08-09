@@ -14,10 +14,10 @@ Hospital Scenario
 '''
 class Doctor(object):
     def __init__(self):
-        self.name = ""
-        self.medical_field = ""
-        self.hospital_name = ""
-        self.amount_patients = ""
+        self._name = ""
+        self._medical_field = ""
+        self._hospital_name = ""
+        self._amount_patients = ""
         
     def diagnose_patient(self):
         pass
@@ -28,10 +28,10 @@ class Doctor(object):
 
 class Nurse(object):
     def __init__(self):
-        self.name = ""
-        self.type = ""
-        self.hospital_name = ""
-        self.hospital_floor = ""
+        self._name = ""
+        self._type = ""
+        self._hospital_name = ""
+        self._hospital_floor = ""
 
     def check_patient(self):
         pass
@@ -42,13 +42,13 @@ class Nurse(object):
 
 class Patient(object):
     def __init__(self):
-        self.name = ""
-        self.hospital_name = ""
-        self.hospital_room = ""
-        self.age = ""
-        self.medical_issue = ""
-        self.hospital_entry_date = ""
-        self.hospital_release_date = ""
+        self._name = ""
+        self._hospital_name = ""
+        self._hospital_room = ""
+        self._age = ""
+        self._medical_issue = ""
+        self._hospital_entry_date = ""
+        self._hospital_release_date = ""
 
     def take_medication(self):
         pass
@@ -59,10 +59,10 @@ class Patient(object):
 
 class Visitor(object):
     def __init__(self):
-        self.name = ""
-        self.patient_visiting = ""
-        self.hospital_room = ""
-        self.date_visiting = ""
+        self._name = ""
+        self._patient_visiting = ""
+        self._hospital_room = ""
+        self._date_visiting = ""
 
     def visit_patient(self):
         pass
