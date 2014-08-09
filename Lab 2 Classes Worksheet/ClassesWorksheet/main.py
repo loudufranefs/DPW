@@ -8,7 +8,7 @@ class Doctor(object):
     def __init__(self):
         self.name = ""
         self.specialty = ""
-        self.hospital = ""
+        self.hospital_name = ""
         
     def diagnose_patient(self):
         pass
@@ -16,6 +16,15 @@ class Doctor(object):
         pass
     def run_analysis(self):
         pass
+
+class Nurse(object):
+    def __init__(self):
+        self.name = ""
+        self.type = ""
+        self.hospital_name = ""
+        self.hospital_floor = ""
+
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)
