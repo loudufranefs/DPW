@@ -9,11 +9,18 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        page_header = ''
-        page_form = ''
+        page_header = '''<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Simple Form</title>
+        <link rel="stylesheet" url="css/style.css" type="text/css">
+    </head>
+    <body>
+        '''
+        page_content = ''
         page_footer = ''
 
-        page = ''
+        page = page_header + page_content + page_footer
         self.response.write(page)
 
 app = webapp2.WSGIApplication([
