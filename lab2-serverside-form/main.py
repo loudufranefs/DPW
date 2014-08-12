@@ -9,7 +9,12 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        page_header = ''
+        page_form = ''
+        page_footer = ''
+
+        page = ''
+        self.response.write(page)
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
