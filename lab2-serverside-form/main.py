@@ -16,9 +16,15 @@ class MainHandler(webapp2.RequestHandler):
         <link rel="stylesheet" url="css/style.css" type="text/css">
     </head>
     <body>
+        <div>
         '''
-        page_content = ''
-        page_footer = ''
+        page_content = '''
+        '''
+        page_footer = '''
+        </div>
+    </body>
+</html>
+        '''
 
         page = page_header + page_content + page_footer
         self.response.write(page)
