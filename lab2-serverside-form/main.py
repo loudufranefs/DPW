@@ -18,7 +18,13 @@ class MainHandler(webapp2.RequestHandler):
     <body>
         <div>
         '''
-        page_content = '''
+        #display form content
+        page_content_form = '''
+        <form method="GET">
+        </form>
+        '''
+        #display result page content
+        page_content_result = '''
         '''
         page_footer = '''
         </div>
@@ -26,7 +32,7 @@ class MainHandler(webapp2.RequestHandler):
 </html>
         '''
 
-        page = page_header + page_content + page_footer
+        page = page_header + page_content_form + page_footer
         self.response.write(page)
 
 app = webapp2.WSGIApplication([
