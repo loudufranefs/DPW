@@ -33,6 +33,7 @@ class PageTemplate(object):
             <div><label>To</label><input type="text" name="to_location"></div>
             <div><label>Depart</label><input type="date" name="depart_date"></div>
             <div id="return_date"><label>Returning</label><input type="date" name="return_date"></div>
+            <span class="clear_all"></span>
             <!-Select->
             <div>
                 <label>Persons</label>
