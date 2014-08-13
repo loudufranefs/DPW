@@ -8,10 +8,16 @@ Concept : form for booking a flight
 import webapp2
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        page_header = '''<!DOCTYPE HTML>
+        pt = PageTemplate()
+        self.response.write(pt.display_page)
+
+class PageTemplate(object):
+    def __init__(self):
+        self.page_title = 'Flight Finder'
+        self.page_header = '''<!DOCTYPE HTML>
 <html>
     <head>
-        <title></title>
+        <title>{self.page_title}</title>
         <link rel="stylesheet" href="css/style.css" type="text/css">
         <!--javascript-->
         <script type="text/javascript">
@@ -29,9 +35,8 @@ class MainHandler(webapp2.RequestHandler):
     <body>
         <div>
         <h1>Flight Finder</h1>
-        '''
-        #display form content
-        page_content_form = '''
+            '''
+        self.page_content_form = '''
         <h2>Search Flights</h2>
         <form method="GET">
             <div><label>One Way?</label><input type="checkbox" name="oneway" onChange="OneWay();" id="oneWayCheck"></div>
@@ -52,24 +57,23 @@ class MainHandler(webapp2.RequestHandler):
             </div>
             <input type="submit" name="search_btn" value="Search">
         </form>
-        '''
-
-
-        page_footer = '''
+            '''
+        self.page_footer = '''
         </div>
     </body>
 </html>
-        '''
+            '''
+
+    def display_page(self):
         if self.request.GET:
             to_location = self.request.GET['to_location']
             from_location = self.request.GET['from_location']
             depart_date = self.request.GET['depart_date']
             return_date = self.request.GET['return_date']
             persons = self.request.GET['persons']
-            #oneWay = self.request.GET['oneway']
+                #oneWay = self.request.GET['oneway']
 
-            #display result page content
-            page_content_result = '''
+            self.page_content_result = '''
         <div class="results_page">
             <h2>Your Flight Information</h2>
             <h3>''' + persons + ''' People Traveling </h3>
@@ -80,12 +84,11 @@ class MainHandler(webapp2.RequestHandler):
                 <dt>Returning:</dt><dd> ''' + return_date + ''' </dd>
            </dl>
         </div>
-        '''
-            page = page_header + page_content_result + page_footer
-            self.response.write(page)
+            '''
+            page = self.page_header + self.page_content_result + self.page_footer
         else:
-            page = page_header + page_content_form + page_footer
-            self.response.write(page)
+            page = self.page_header + self.page_content_form + self.page_footer
+        return page
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
