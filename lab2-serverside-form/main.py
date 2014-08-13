@@ -29,14 +29,19 @@ class MainHandler(webapp2.RequestHandler):
                 persons_flying = 'people'
             else:
                 persons_flying = 'person'
-            
+
+            #condition for flight type
+            if flight_type == 'true':
+                flight_type = 'One Way'
+            else:
+                flight_type = 'Round Trip'
             #over-write page title
             pt.page_title = "Your Flight Information"
             #over-write page content with form values
             pt.page_content_form = '''
         <div class="results_page">
             <h2>Your Flight Information</h2>
-            <h3>''' + persons + ' ' + persons_flying + ''' Traveling</h3>
+            <h3>You want to book a '''+ flight_type + ' flight with  '+ persons + ' ' + persons_flying + ''' Traveling</h3>
            <dl>
                 <dt>From:</dt><dd> ''' + from_location + ''' </dd>
                 <dt>To:</dt><dd> ''' + to_location + ''' </dd>
