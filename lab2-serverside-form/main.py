@@ -21,6 +21,10 @@ class MainHandler(webapp2.RequestHandler):
         #display form content
         page_content_form = '''
         <form method="GET">
+            <div><label>From</label><input type="text" name="from_location></div>
+            <div><label>To</label><input type="text" name="to_location></div>
+            <div><label>Leaving</label><input type="date" name="leave_date"></div>
+            <div><label>Returning</label><input type="date" name="return_date></div>
         </form>
         '''
         #display result page content
