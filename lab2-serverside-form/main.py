@@ -13,7 +13,7 @@ class MainHandler(webapp2.RequestHandler):
 <html>
     <head>
         <title>Simple Form</title>
-        <link rel="stylesheet" url="css/style.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
     <body>
         <div>
