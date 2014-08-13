@@ -13,6 +13,18 @@ class MainHandler(webapp2.RequestHandler):
     <head>
         <title>Simple Form</title>
         <link rel="stylesheet" href="css/style.css" type="text/css">
+        <!--javascript-->
+        <script type="text/javascript">
+            function OneWay(){
+                if (document.getElementById('oneWayCheck').checked){
+                    //show return date field
+                    document.getElementById('return_date').style.display = 'none';
+                }else{
+                    // hide return date field
+                    document.getElementById('return_date').style.display = 'block';
+                }
+            }
+        </script>
     </head>
     <body>
         <div>
@@ -20,9 +32,9 @@ class MainHandler(webapp2.RequestHandler):
         #display form content
         page_content_form = '''
         <form method="GET">
-            <div id="oneWayCheck"><label>One Way?</label><input type="checkbox" name="type"></div>
+            <div><label>One Way?</label><input type="checkbox" name="type" onChange="OneWay();" id="oneWayCheck"></div>
             <div><label>From</label><input type="text" name="from_location"></div>
-            <div id="to_location"><label>To</label><input type="text" name="to_location"></div>
+            <div><label>To</label><input type="text" name="to_location"></div>
             <div><label>Leaving</label><input type="date" name="leave_date"></div>
             <div id="return_date"><label>Returning</label><input type="date" name="return_date"></div>
             <!-Select->
