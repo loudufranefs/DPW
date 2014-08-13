@@ -11,7 +11,7 @@ class MainHandler(webapp2.RequestHandler):
         page_header = '''<!DOCTYPE HTML>
 <html>
     <head>
-        <title>{page_title}</title>
+        <title></title>
         <link rel="stylesheet" href="css/style.css" type="text/css">
         <!--javascript-->
         <script type="text/javascript">
@@ -34,7 +34,7 @@ class MainHandler(webapp2.RequestHandler):
         page_content_form = '''
         <h2>Search Flights</h2>
         <form method="GET">
-            <div><label>One Way?</label><input type="checkbox" name="type" onChange="OneWay();" id="oneWayCheck"></div>
+            <div><label>One Way?</label><input type="checkbox" name="oneway" onChange="OneWay();" id="oneWayCheck"></div>
             <div><label>From</label><input type="text" name="from_location"></div>
             <div><label>To</label><input type="text" name="to_location"></div>
             <div><label>Depart</label><input type="date" name="depart_date"></div>
@@ -54,24 +54,36 @@ class MainHandler(webapp2.RequestHandler):
         </form>
         '''
 
-        #display result page content
-        page_content_result = '''
-        <div class="results_page">
-            <h2>Your Flight Information</h2>
-        </div>
-        '''
+
         page_footer = '''
         </div>
     </body>
 </html>
         '''
         if self.request.GET:
-            #change page title
-            page_title = 'Your Flight Information'
+            to_location = self.request.GET['to_location']
+            from_location = self.request.GET['from_location']
+            depart_date = self.request.GET['depart_date']
+            return_date = self.request.GET['return_date']
+            persons = self.request.GET['persons']
+            #oneWay = self.request.GET['oneway']
+
+            #display result page content
+            page_content_result = '''
+        <div class="results_page">
+            <h2>Your Flight Information</h2>
+            <h3>''' + persons + ''' People Traveling </h3>
+           <dl>
+                <dt>From:</dt><dd> ''' + from_location + ''' </dd>
+                <dt>To:</dt><dd> ''' + to_location + ''' </dd>
+                <dt>Departing:</dt><dd> ''' + depart_date + ''' </dd>
+                <dt>Returning:</dt><dd> ''' + return_date + ''' </dd>
+           </dl>
+        </div>
+        '''
             page = page_header + page_content_result + page_footer
             self.response.write(page)
         else:
-            page_title = 'Search Flights'
             page = page_header + page_content_form + page_footer
             self.response.write(page)
 
