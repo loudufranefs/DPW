@@ -11,7 +11,7 @@ class MainHandler(webapp2.RequestHandler):
         page_header = '''<!DOCTYPE HTML>
 <html>
     <head>
-        <title>Simple Form</title>
+        <title>{page_title}</title>
         <link rel="stylesheet" href="css/style.css" type="text/css">
         <!--javascript-->
         <script type="text/javascript">
@@ -28,14 +28,16 @@ class MainHandler(webapp2.RequestHandler):
     </head>
     <body>
         <div>
+        <h1>Flight Finder</h1>
         '''
         #display form content
         page_content_form = '''
+        <h2>Search Flights</h2>
         <form method="GET">
             <div><label>One Way?</label><input type="checkbox" name="type" onChange="OneWay();" id="oneWayCheck"></div>
             <div><label>From</label><input type="text" name="from_location"></div>
             <div><label>To</label><input type="text" name="to_location"></div>
-            <div><label>Leaving</label><input type="date" name="leave_date"></div>
+            <div><label>Depart</label><input type="date" name="depart_date"></div>
             <div id="return_date"><label>Returning</label><input type="date" name="return_date"></div>
             <!-Select->
             <div>
@@ -48,20 +50,30 @@ class MainHandler(webapp2.RequestHandler):
                     <option value="5">5</option>
                 </select>
             </div>
+            <input type="submit" name="search_btn" value="Search">
         </form>
         '''
 
         #display result page content
         page_content_result = '''
+        <div class="results_page">
+            <h2>Your Flight Information</h2>
+        </div>
         '''
         page_footer = '''
         </div>
     </body>
 </html>
         '''
-
-        page = page_header + page_content_form + page_footer
-        self.response.write(page)
+        if self.request.GET:
+            #change page title
+            page_title = 'Your Flight Information'
+            page = page_header + page_content_result + page_footer
+            self.response.write(page)
+        else:
+            page_title = 'Search Flights'
+            page = page_header + page_content_form + page_footer
+            self.response.write(page)
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
