@@ -41,8 +41,7 @@ class MainHandler(webapp2.RequestHandler):
                 #no return date with a one way flight
                 return_information = ''
 
-            #over-write page title
-            pt.page_title = "Your Flight Information"
+
 
             #over-write page content with form values
             pt.page_content_form = '''
@@ -55,7 +54,7 @@ class MainHandler(webapp2.RequestHandler):
                 <dt>Trip Date:</dt><dd> ''' + str(depart_date) + ''' </dd>
                 ''' + return_information + '''
            </dl>
-           <h4>Thank you for Flying with us</h4>
+           <h4>Thank you for Flying with us!</h4>
         </div>
         '''
         #page variable to render

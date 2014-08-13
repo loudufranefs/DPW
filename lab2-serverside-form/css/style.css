@@ -1,3 +1,27 @@
 body{
-background: #ccc;
+    background: #bdf3ff;
+    font: 16px Helvetica, sans-serif;
+    margin:0;
+    padding:0;
 }
+
+body > div {max-width:640px; width:80%; margin:auto;}
+form > div {width: 46%; float:left; margin:0 3% 10px 0;}
+input[type="checkbox"]{ width: 40px; height:20px; margin-top:10px;}
+input[type="text"],
+input[type="date"],
+select{
+    width: 90%;
+    height:40px;
+    line-height: 40px;
+    padding:4px 0px 4px 10px;
+    display:block;
+    -webkit-appearance: menulist-button;
+    }
+input[type="submit"]{
+    clear:both;
+    display:block;
+    width:300px;
+    height:40px;
+    margin:10px auto;
+    }

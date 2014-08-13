@@ -1,13 +1,11 @@
 #page Template setup
 class PageTemplate(object):
     def __init__(self):
-        #page title
-        self.page_title = 'Flight Finder'
         #page header
         self.page_header = '''<!DOCTYPE HTML>
 <html>
     <head>
-        <title>{self.page_title}</title>
+        <title>Flight Finder</title>
         <link rel="stylesheet" href="css/style.css" type="text/css">
         <!--javascript-->
         <script type="text/javascript">
@@ -31,9 +29,6 @@ class PageTemplate(object):
         self.page_content_form = '''
         <h2>Search Flights</h2>
         <form method="GET" action="">
-            <div><label>One Way?</label>
-            <input type="checkbox" name="flight_type" onChange="OneWay();" id="oneWayCheck">
-            </div>
             <div><label>From</label><input type="text" name="from_location"></div>
             <div><label>To</label><input type="text" name="to_location"></div>
             <div><label>Depart</label><input type="date" name="depart_date"></div>
@@ -48,6 +43,9 @@ class PageTemplate(object):
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
+            </div>
+            <div><label>One Way?</label>
+            <input type="checkbox" name="flight_type" onChange="OneWay();" id="oneWayCheck">
             </div>
             <input type="submit" name="search_btn" value="Search">
         </form>
