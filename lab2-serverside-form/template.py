@@ -13,10 +13,8 @@ class PageTemplate(object):
         <script type="text/javascript">
             function OneWay(){
                 if (document.getElementById('oneWayCheck').checked){
-                    document.getElementById('oneWayCheck').value = "true";
                     //hide return date field
                     document.getElementById('return_date').style.display = 'none';
-                    document.getElementById('return_value').style.display = 'none';
                 }else{
                     document.getElementById('oneWayCheck').value = "false";
                     // show return date field
@@ -34,7 +32,7 @@ class PageTemplate(object):
         <h2>Search Flights</h2>
         <form method="GET" action="">
             <div><label>One Way?</label>
-            <input type="checkbox" name="flight_type" value="true" onChange="OneWay();" id="oneWayCheck">
+            <input type="checkbox" name="flight_type" onChange="OneWay();" id="oneWayCheck">
             </div>
             <div><label>From</label><input type="text" name="from_location"></div>
             <div><label>To</label><input type="text" name="to_location"></div>
