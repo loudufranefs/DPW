@@ -1,6 +1,9 @@
+#page Template setup
 class PageTemplate(object):
     def __init__(self):
+        #page title
         self.page_title = 'Flight Finder'
+        #page header
         self.page_header = '''<!DOCTYPE HTML>
 <html>
     <head>
@@ -10,10 +13,13 @@ class PageTemplate(object):
         <script type="text/javascript">
             function OneWay(){
                 if (document.getElementById('oneWayCheck').checked){
-                    //show return date field
+                    document.getElementById('oneWayCheck').value = "true";
+                    //hide return date field
                     document.getElementById('return_date').style.display = 'none';
+                    document.getElementById('return_value').style.display = 'none';
                 }else{
-                    // hide return date field
+                    document.getElementById('oneWayCheck').value = "false";
+                    // show return date field
                     document.getElementById('return_date').style.display = 'block';
                 }
             }
@@ -23,10 +29,13 @@ class PageTemplate(object):
         <div>
         <h1>Flight Finder</h1>
         '''
+        #display page content
         self.page_content_form = '''
         <h2>Search Flights</h2>
-        <form method="GET">
-            <div><label>One Way?</label><input type="checkbox" name="oneway_flight" value="0" onChange="OneWay();" id="oneWayCheck"></div>
+        <form method="GET" action="">
+            <div><label>One Way?</label>
+            <input type="checkbox" name="flight_type" value="true" onChange="OneWay();" id="oneWayCheck">
+            </div>
             <div><label>From</label><input type="text" name="from_location"></div>
             <div><label>To</label><input type="text" name="to_location"></div>
             <div><label>Depart</label><input type="date" name="depart_date"></div>
@@ -45,6 +54,7 @@ class PageTemplate(object):
             <input type="submit" name="search_btn" value="Search">
         </form>
         '''
+        #page footer
         self.page_footer = '''
         </div>
     </body>
