@@ -24,6 +24,7 @@ h2{
     }
 h3 {color: #555;}
 h3 span {color: #0da5c7;}
+h4 {clear:both; text-align:right; padding-top:50px; color: #f97a14; display:block; font-style: italic;}
 body > div > div, form{padding:30px; background: #fff;}
 form > div {width: 47%; float:left; margin:0 3% 10px 0;}
 label {color: #00809c; }
@@ -49,3 +50,7 @@ input[type="submit"]{
     background: #f97a14;
     border:0;
     }
+
+dt{float:left; width:100px; display:inline-block; clear:left;}
+dd{float:left; width:300px; display:inline-block;}
+dt, dd {border-bottom: 1px dotted #ccc; line-height:40px;}
