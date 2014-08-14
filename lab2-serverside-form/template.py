@@ -6,6 +6,7 @@ class PageTemplate(object):
 <html>
     <head>
         <title>Flight Finder</title>
+        <!-- CSS-->
         <link rel="stylesheet" href="css/style.css" type="text/css">
         <!--javascript-->
         <script type="text/javascript">
