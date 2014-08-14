@@ -28,13 +28,12 @@ class PageTemplate(object):
         #display page content
         self.page_content_form = '''
         <h2>Search Flights</h2>
-        <form method="GET" action="">
+        <form method="GET">
             <div><label>From</label><input type="text" name="from_location"></div>
             <div><label>To</label><input type="text" name="to_location"></div>
             <div><label>Depart</label><input type="date" name="depart_date"></div>
             <div id="return_date"><label>Returning</label><input type="date" name="return_date"></div>
             <span class="clear_all"></span>
-            <!-Select->
             <div>
                 <label>Persons</label>
                 <select name="persons">
