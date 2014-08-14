@@ -5,18 +5,16 @@ body{
     padding:0;
 }
 .clear_all{clear:both; display:block; height: 1px;}
-body > div {max-width:640px; width:80%; margin:100px auto 0;}
+body > div {max-width:640px; width:80%; margin:30px auto 0;}
 h1{
-    position:absolute;
-    top:10px;
-    left: 10px;
-    font-weight:normal;
-    text-transform: uppercase;
-    font-size: 1.225em;
-    margin:5px;
+    background: url(../images/LOGO.png) no-repeat;
+    width:328px;
+    height: 132px;
+    text-indent: -9999px;
+    margin:auto;
 }
 h2{
-    background: #0da5c7;
+    background: #34baca;
     margin-bottom:0;
     padding:10px;
     color: #fff;

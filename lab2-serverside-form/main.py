@@ -54,7 +54,7 @@ class MainHandler(webapp2.RequestHandler):
                 <dt>Trip Date:</dt><dd> ''' + str(depart_date) + ''' </dd>
                 ''' + return_information + '''
            </dl>
-           <h4>Thank you for Flying with us!</h4>
+           <h4>Thank you for using Flight Finder!</h4>
         </div>
         '''
         #page variable to render
