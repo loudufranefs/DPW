@@ -47,7 +47,7 @@ class MainHandler(webapp2.RequestHandler):
             pt.page_content_form = '''
         <h2>Your Flight Information</h2>
         <div class="results_page">
-            <h3>You want to book a '''+ flight_type + ' flight with  '+ persons + ' ' + persons_flying + ''' Traveling</h3>
+            <h3>You want to book a <span>'''+ flight_type + '</span> flight with  <span>'+ persons + ' ' + persons_flying + ''' </span>Traveling</h3>
            <dl>
                 <dt>From:</dt><dd> ''' + from_location + ''' </dd>
                 <dt>To:</dt><dd> ''' + to_location + ''' </dd>

@@ -22,6 +22,8 @@ h2{
     color: #fff;
     font-weight:normal;
     }
+h3 {color: #555;}
+h3 span {color: #0da5c7;}
 body > div > div, form{padding:30px; background: #fff;}
 form > div {width: 47%; float:left; margin:0 3% 10px 0;}
 label {color: #00809c; }
