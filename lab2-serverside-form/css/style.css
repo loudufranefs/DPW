@@ -22,10 +22,10 @@ h2{
     color: #fff;
     font-weight:normal;
     }
-h3 {color: #555;}
+h3 {color: #555;border-bottom: 1px dotted #ccc; padding:10px;}
 h3 span {color: #0da5c7;}
 h4 {clear:both; text-align:right; padding-top:50px; color: #f97a14; display:block; font-style: italic;}
-body > div > div, form{padding:30px; background: #fff;}
+body > div > div, form{padding:30px; background: #fff; }
 form > div {width: 47%; float:left; margin:0 3% 10px 0;}
 label {color: #00809c; }
 input[type="checkbox"]{ width: 40px; height:20px; margin-top:10px;}
@@ -37,6 +37,7 @@ select{
     line-height: 40px;
     padding:4px 0 4px 10px;
     display:block;
+    font-size:1em;
     }
 select{
     -webkit-appearance: menulist-button;
@@ -45,12 +46,28 @@ input[type="submit"]{
     clear:both;
     display:block;
     width:300px;
-    height:40px;
-    margin:10px auto;
-    background: #f97a14;
+    height:50px;
+    line-height:50px;
+    margin:30px auto;
     border:0;
-    }
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size:1.5em;
+    color: #fff;
+    cursor: pointer;
+    background: #ffa84c;
+    background: -moz-linear-gradient(top,  #ffa84c 0%, #ff7b0d 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffa84c), color-stop(100%,#ff7b0d));
+    background: -webkit-linear-gradient(top,  #ffa84c 0%,#ff7b0d 100%);
+    background: -o-linear-gradient(top,  #ffa84c 0%,#ff7b0d 100%);
+    background: -ms-linear-gradient(top,  #ffa84c 0%,#ff7b0d 100%);
+    background: linear-gradient(to bottom,  #ffa84c 0%,#ff7b0d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff7b0d',GradientType=0 );
 
-dt{float:left; width:100px; display:inline-block; clear:left;}
-dd{float:left; width:300px; display:inline-block;}
+    }
+input[type="submit"]:hover{color: #000;}
+
+dt{float:left; width:100px;  clear:left;}
+dd{float:left; width:300px;}
 dt, dd {border-bottom: 1px dotted #ccc; line-height:40px;}
