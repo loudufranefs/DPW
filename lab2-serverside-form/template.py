@@ -1,7 +1,14 @@
+'''
+Name: Loubna Dufrane
+Date: 9/12/2014
+Assignment: Lab 2 Server Side Form (Simple Form)
+Class: Design Patterns for Web Programming
+Template: PageTemplate
+'''
 #page Template setup
 class PageTemplate(object):
     def __init__(self):
-        #page header
+        #page header holding the html head, linking to the stylesheet and includes javascript that makes the form interactive by showing/hiding one of the form fields.
         self.page_header = '''<!DOCTYPE HTML>
 <html>
     <head>
@@ -26,7 +33,7 @@ class PageTemplate(object):
         <div>
         <h1>Flight Finder</h1>
         '''
-        #display page content
+        #page content showing the form fields and submit button. This variable will be overwritten once user submits form and will instead show the values instead of the form. I think this is more optimized than adding another variable and showing that instead.
         self.page_content_form = '''
         <h2>Search Flights</h2>
         <form method="GET">
@@ -51,7 +58,7 @@ class PageTemplate(object):
             <input type="submit" name="search_btn" value="Search">
         </form>
         '''
-        #page footer
+        #page footer closes the html page.
         self.page_footer = '''
         </div>
     </body>

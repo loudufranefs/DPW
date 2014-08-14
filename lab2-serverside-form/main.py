@@ -25,6 +25,7 @@ class MainHandler(webapp2.RequestHandler):
             # for the checkbox value to come through when there is no value, I needed to use get_all
             flight_type = self.request.get_all('flight_type')
 
+            #Condition
             #check amount of people and change wording
             #if persons is more than 1, then wording should be people
             if int(persons) > 1:
@@ -33,7 +34,8 @@ class MainHandler(webapp2.RequestHandler):
                 #if persons is not more than one, then wording should be person
                 persons_flying = 'person'
 
-            #condition for flight type - if flight type is empty, then it is not one way. Show roundtrip wording and also include html for the return value
+            #Condition
+            #if flight type is empty, then it is not one way. Show roundtrip wording and also include html for the return value
             if flight_type == []:
                 flight_type = 'Round Trip'
                 #show return flight date if it's a round trip
@@ -59,6 +61,8 @@ class MainHandler(webapp2.RequestHandler):
         </div>
         '''
         #page variable that will be built
+        #page includes page header and page footer found in PageTemplate class
+        #page will display appropriate view/content
         page = pt.page_header + pt.page_content_form + pt.page_footer
 
         #write html page from page variable
