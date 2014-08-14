@@ -45,8 +45,8 @@ class MainHandler(webapp2.RequestHandler):
 
             #over-write page content with form values
             pt.page_content_form = '''
+        <h2>Your Flight Information</h2>
         <div class="results_page">
-            <h2>Your Flight Information</h2>
             <h3>You want to book a '''+ flight_type + ' flight with  '+ persons + ' ' + persons_flying + ''' Traveling</h3>
            <dl>
                 <dt>From:</dt><dd> ''' + from_location + ''' </dd>
