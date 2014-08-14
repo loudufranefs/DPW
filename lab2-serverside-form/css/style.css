@@ -1,5 +1,5 @@
 body{
-    background: #bdf3ff;
+    background: #b0f6ff  url(../images/bg.png) repeat-x  0 0;
     font: 16px Helvetica, sans-serif;
     margin:0;
     padding:0;
@@ -32,7 +32,7 @@ select{
     width: 90%;
     height:40px;
     line-height: 40px;
-    padding:4px 0px 4px 10px;
+    padding:4px 0 4px 10px;
     display:block;
     }
 select{
@@ -44,4 +44,6 @@ input[type="submit"]{
     width:300px;
     height:40px;
     margin:10px auto;
+    background: #f97a14;
+    border:0;
     }
