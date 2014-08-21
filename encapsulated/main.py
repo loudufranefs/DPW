@@ -13,6 +13,8 @@ from tracker import WeightLossTracker
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        #page template
+        p = PageTemplate()
         
         #Data Object
         lucy = WeightLossTracker()
@@ -21,8 +23,10 @@ class MainHandler(webapp2.RequestHandler):
         lucy.week3 = 2
         lucy.week4 = 4
         
-        self.response.write("Lucy lost and average of " + str(lucy.avg_weighloss_week) + " pounds per week,  and a total of " + str(lucy.total_weightloss) + " pounds.")
-
+       #self.response.write("Lucy lost and average of " + str(lucy.avg_weighloss_week) + " pounds per week,  and a total of " + str(lucy.total_weightloss) + " pounds.")
+        
+        print_page = p.page_head + p.page_body + p.page_end
+        self.response.write(print_page)
 
     
 app = webapp2.WSGIApplication([

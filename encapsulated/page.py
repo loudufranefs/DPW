@@ -5,9 +5,11 @@ class PageTemplate(object):
 <html>
     <head>
     <title>Weightloss Challenge</title>
-    <link />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
     </head>
     <body>
+        <div id="wrapper">
+            <h1>Weight Loss Challenge</h1>
         '''
         #page body holding content
         self.page_body = '''
@@ -15,6 +17,7 @@ class PageTemplate(object):
     
         #page end holding end html
         self.page_end = '''
+        </div>
     </body>
 </html>
         '''
