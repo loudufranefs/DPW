@@ -1,1 +1,21 @@
-body{background: #eee;}
+body{background: #eee; margin:0; font:16px/140% Arial, Helvetica, sans-serif;}
+#wrapper {width:960px; margin:auto;}
+.challengers ul{list-style: none; width:100%; margin:0; padding:0;}
+.challengers ul li {
+    display:inline-block; 
+    width:140px; 
+    margin:10px; 
+    padding:30px 10px 5px 10px ;  
+    text-align:center;
+    background: #fff;
+    border:1px solid #ccc;
+    font-size: 20px;
+}
+.challengers ul li a {
+    display:block;
+    font-size: 12px;
+    background: #ff9300;
+    margin: 5px auto;
+    padding:5px;
+    color: #000;
+    }
