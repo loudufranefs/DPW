@@ -8,7 +8,6 @@ class WeightLossTracker(object)
     self.__total_weightloss = 0 #private attribute
     self.__avg_weighloss_week = 0 #private attribute
     
-    
     # __total_weightloss getter
     @property
     def total_weightloss(self)
@@ -17,7 +16,7 @@ class WeightLossTracker(object)
     # __total_weightloss setter
     @total_weightloss.setter
     def total_weightloss(self, new_total_weightloss)
-        pass
+        self.total_weightloss = new_total_weightloss
     
     # __avg_weighloss_week getter
     @property
@@ -27,4 +26,4 @@ class WeightLossTracker(object)
     # __total_weightloss setter
     @avg_weighloss_week.setter
     def avg_weighloss_week(self, new_avg_weighloss_week)
-        pass
+        self.avg_weighloss_week = new_avg_weighloss_week
