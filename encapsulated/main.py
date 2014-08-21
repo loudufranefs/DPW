@@ -6,6 +6,8 @@ Class: Design Patterns for Web Programming
 Concept : Weightloss Challenge
 '''
 import webapp2
+#import page template
+from page import PageTemplate
 #import weightlostttracker
 from tracker import WeightLossTracker
 
