@@ -1,5 +1,6 @@
-class PageTemplate(object)
-    def __init__(self)#page head holding beginning html
+class PageTemplate(object):
+    def __init__(self):
+        #page head holding beginning html
         self.page_head ='''<!doctype html>
 <html>
     <head>

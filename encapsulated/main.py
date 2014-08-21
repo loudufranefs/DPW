@@ -13,7 +13,15 @@ from tracker import WeightLossTracker
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        
+        #Data Object
+        lucy = WeightLossTracker()
+        lucy.week1 = 5
+        lucy.week2 = 8
+        lucy.week3 = 2
+        lucy.week4 = 4
+        
+        self.response.write("Lucy lost and average of " + str(lucy.avg_weighloss_week) + " pounds per week,  and a total of " + str(lucy.total_weightloss) + " pounds.")
 
 
     
