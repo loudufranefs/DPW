@@ -9,10 +9,10 @@ class PageTemplate(object):
     </head>
     <body>
         <div id="wrapper">
-            <h1>Weight Loss Challenge</h1>
+            <h1>Weightloss Challenge</h1>
         '''
         #page body holding content
-        self.page_body = '''
+        self.page_body = ''' No Challengers to display
         '''
     
         #page end holding end html
