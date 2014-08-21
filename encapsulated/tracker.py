@@ -16,7 +16,7 @@ class WeightLossTracker(object)
     
     # __total_weightloss setter
     @total_weightloss.setter
-    def total_weightloss(self)
+    def total_weightloss(self, new_total_weightloss)
         pass
     
     # __avg_weighloss_week getter
@@ -26,5 +26,5 @@ class WeightLossTracker(object)
     
     # __total_weightloss setter
     @avg_weighloss_week.setter
-    def avg_weighloss_week(self)
+    def avg_weighloss_week(self, new_avg_weighloss_week)
         pass
