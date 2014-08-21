@@ -12,7 +12,8 @@ class WeightLossTracker(object)
     # __total_weightloss getter
     @property
     def total_weightloss(self)
-        return __total_weightloss
+        self.__total_weightloss = self.week1 + self.week2 + self.week3 + self.week4
+        return self.__total_weightloss
     
     # __total_weightloss setter
     @total_weightloss.setter
@@ -22,7 +23,8 @@ class WeightLossTracker(object)
     # __avg_weighloss_week getter
     @property
     def avg_weighloss_week(self)
-        return __avg_weighloss_week
+        self.__avg_weighloss_week = (self.week1 + self.week2 + self.week3 + self.week4)/4
+        return self.__avg_weighloss_week
     
     # __total_weightloss setter
     @avg_weighloss_week.setter
