@@ -78,15 +78,16 @@ class MainHandler(webapp2.RequestHandler):
             #I wanted this to be added rather than overwrite the body - to make it more usable for the user to navigate through all the objects.
             p.page_body += '''
             <div id="challenger">
-                <h3>{challenger_name} lost a total of {total_weightloss}lbs</h3>
-                <ul>
-                    <li>Week 1 : {week1}</li>
-                    <li>Week 2 : {week2}</li>
-                    <li>Week 3 : {week3}</li>
-                    <li>Week 4 : {week4}</li>
-                    <li>Average lost/week : {avg_weightloss}</li>
-                </ul>
                 <a href="/">close</a>
+                <h3>{challenger_name} lost a total of {total_weightloss}lbs</h3>           
+                <p>Amount of weight lost per week:</p>
+                <ul>
+                    <li>Week 1 : {week1}lbs</li>
+                    <li>Week 2 : {week2}lbs</li>
+                    <li>Week 3 : {week3}lbs</li>
+                    <li>Week 4 : {week4}lbs</li>
+                    <li><strong>Average lost/week : {avg_weightloss}lbs</strong></li>
+                </ul>
             </div>
             '''
         #build print page
