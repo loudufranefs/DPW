@@ -15,6 +15,16 @@ class MainHandler(webapp2.RequestHandler):
 class PageTemplate(object):
     def __init__(self):
     
+    #page head
+    self.page_head='''
+    '''
+    #page content
+    self.page_content='''
+    '''
+    #page end
+    self.page_end='''
+    '''
+    
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
