@@ -21,15 +21,20 @@ class MainHandler(webapp2.RequestHandler):
         api_opener = urllib2.build_opener()
         #get info from api url
         api_result = api_opener.open(api_request)
-        print api_result
+        
+        
         #use minidom to parse xml
         apixml = minidom.parse(api_result)
+        #target specific node by tagname
         country_name = apixml.getElementsByTagName('countryName')[0].firstChild.nodeValue
+        
+        
+        #write content with country_name to page content
         p.page_content = "Country Name for this ip address is: " + str(country_name)
         
-        #write html page
         #build out html page
         p.whole_page = p.page_head + p.page_content + p.page_end
+        #render html page
         self.response.write(p.whole_page)
 
 #Page template holding and building html
