@@ -24,7 +24,10 @@ class MainHandler(webapp2.RequestHandler):
         print api_result
         #use minidom to parse xml
         apixml = minidom.parse(api_result)
-        p.page_content =str(apixml)
+        element = apixml.getElementsByTagName('Hostip')[0].firstChild.nodeValue
+        print "element is: "
+        print element
+        p.page_content +=str(element)
         
         #write html page
         self.response.write(p.whole_page)
@@ -43,7 +46,8 @@ class PageTemplate(object):
     <p>This is a hardcoded example.</p>
         '''
         #page content
-        self.page_content=''
+        self.page_content='''
+        '''
         #page end html
         self.page_end='''
     </body>
