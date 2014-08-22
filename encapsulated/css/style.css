@@ -3,7 +3,19 @@ body{max-width:960px;
     margin:0 auto;
     font:16px/140% Arial, Helvetica, sans-serif;
 }
-#wrapper {width:100%; margin:auto;}
+#wrapper {
+    width:100%;
+    margin:auto;
+    background: url(../images/APPLE.jpg) no-repeat left top;
+    padding-top:200px;
+    min-height:500px;
+}
+h1{
+    text-indent: -9999px;
+    background: url(../images/LOGO.png) no-repeat;
+    width: 650px;
+    height: 145px;
+}
 .challengers ul{list-style: none; width:100%; margin:0; padding:0;}
 .challengers ul li {
     display:inline-block; 
