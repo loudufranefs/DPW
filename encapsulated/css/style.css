@@ -66,4 +66,12 @@ h1 {
 #challenger h3 {} 
 #challenger ul {} 
 #challenger li {} 
-#challenger > a {}
+#challenger > a {
+    text-indent: -9999px;
+    float:right;
+    margin: -5px -35px 0 0;
+    background: url(../images/close.png) no-repeat;
+    width:48px;
+    height:48px;
+    display:block;
+}
