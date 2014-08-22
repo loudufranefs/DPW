@@ -1,6 +1,6 @@
 '''
 Name: Loubna Dufrane
-Date: 9/12/2014
+Date: 8/12/2014
 Assignment encapsulated Calculator
 Class: Design Patterns for Web Programming
 Concept : Weightloss Challenge
