@@ -14,6 +14,10 @@ class MainHandler(webapp2.RequestHandler):
         p = PageTemplate()
         self.response.write(p.whole_page)
         
+        #get values from API url with hardcoded value
+        api_url = "http://netflixroulette.net/api/api.php?title=Bodyguard"
+
+#Page template holding and building html
 class PageTemplate(object):
     def __init__(self):
     
@@ -24,7 +28,7 @@ class PageTemplate(object):
     <title></title>
     </head>
     <body>
-    <h1>Page title</h1>
+    <h1>Netflix Roulette</h1>
         '''
         #page content
         self.page_content=''
@@ -33,7 +37,7 @@ class PageTemplate(object):
     </body>
 </html>
         '''
-    
+        #build out html page
         self.whole_page = self.page_head + self.page_content + self.page_end
 
 app = webapp2.WSGIApplication([
