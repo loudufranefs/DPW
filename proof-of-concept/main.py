@@ -32,7 +32,7 @@ class MainHandler(webapp2.RequestHandler):
         country_name = apixml.getElementsByTagName('countryName')[0].firstChild.nodeValue
         
         #write content with country_name to page content
-        p.page_content = "The IP address: " + ip + " address is in country: " + str(country_name)
+        p.page_content = "The IP address: <u>" + ip + "</u> address is in country: <strong>" + str(country_name) + "</strong>"
         
         #build out html page
         p.whole_page = p.page_head + p.page_content + p.page_end
@@ -50,6 +50,7 @@ class PageTemplate(object):
     </head>
     <body>
     <h1>Host IP</h1>
+    <p>This API looks up location by IP address. The API can be found here: <a href="http://www.hostip.info/use.html">http://www.hostip.info/use.html</a></p>
     <p>This is a hardcoded example.</p>
         '''
         #page content
