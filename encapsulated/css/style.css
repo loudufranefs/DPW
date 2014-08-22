@@ -1,51 +1,59 @@
-body{max-width:960px;
+body {
+    max-width: 960px;
     background: #f6f2f0 url(../images/BG_TILE.png) repeat-x;
-    margin:0 auto;
-    font:16px/140% Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    font: 16px/140% Arial, Helvetica, sans-serif;
 }
 #wrapper {
-    width:100%;
-    margin:auto;
+    width: 100%;
+    margin: auto;
     background: url(../images/APPLE.jpg) no-repeat left top;
-    padding-top:200px;
-    min-height:500px;
+    padding-top: 50px;
+    min-height: 500px;
 }
-h1{
+h1 {
     text-indent: -9999px;
     background: url(../images/LOGO.png) no-repeat;
     width: 650px;
     height: 145px;
+    float:right;
 }
-.challengers ul{list-style: none; width:100%; margin:0; padding:0;}
+.challengers ul {
+    clear:both;
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 .challengers ul li {
-    display:inline-block; 
-    width:18%;
-    max-width:140px;
-    margin:10px; 
-    padding:30px 10px 5px 10px ;  
-    text-align:center;
+    display: inline-block;
+    width: 18%;
+    max-width: 140px;
+    margin: 10px;
+    padding: 30px 10px 5px 10px;
+    text-align: center;
     background: #fff;
-    border:1px solid #ccc;
+    border: 1px solid #ccc;
     font-size: 20px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
 .challengers ul li a {
-    display:block;
+    display: block;
     font-size: 12px;
     background: #ff9300;
     margin: 10px auto;
-    padding:5px;
+    padding: 5px;
     color: #fff;
-    font-weight:bold;
-     -webkit-border-radius: 5px;
+    font-weight: bold;
+    -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    text-decoration:none;
-    }
-#challenger{}
-#challenger h3{}
-#challenger ul {}
-#challenger li{}
+    text-decoration: none;
+}
+#challenger {} 
+#challenger h3 {} 
+#challenger ul {} 
+#challenger li {} 
 #challenger > a {}
