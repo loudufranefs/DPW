@@ -12,23 +12,26 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         #instance of page template
         p = PageTemplate()
-        self.response.write(p.whole_page)
         
         #get values from API url with hardcoded value
-        api_url = "http://netflixroulette.net/api/api.php?title=Bodyguard"
+        api_url = "http://api.hostip.info/?ip=12.215.42.19"
         #create request using urllib2 library for api url
         api_request = urllib2.Request(api_url)
         #create api object opener
-        api_object_opener = urllib2.build_opener()
+        api_opener = urllib2.build_opener()
         #get info from api url
-        api_result = api_object_opener.open(api_request)
+        api_result = api_opener.open(api_request)
+        print api_result
         #use minidom to parse xml
-        api_xml = minidom.parse(api_result)
+        apixml = minidom.parse(api_result)
+        p.page_content =str(apixml)
+        
+        #write html page
+        self.response.write(p.whole_page)
 
 #Page template holding and building html
 class PageTemplate(object):
     def __init__(self):
-    
         #page head html
         self.page_head='''<!doctype html>
 <html>
@@ -36,7 +39,8 @@ class PageTemplate(object):
     <title></title>
     </head>
     <body>
-    <h1>Netflix Roulette</h1>
+    <h1>Host IP</h1>
+    <p>This is a hardcoded example.</p>
         '''
         #page content
         self.page_content=''
