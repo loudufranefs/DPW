@@ -16,13 +16,20 @@ class PageTemplate(object):
     def __init__(self):
     
     #page head
-    self.page_head='''
+    self.page_head='''<!doctype html>
+<html>
+    <head>
+    <title></title>
+    </head>
+    <body>
     '''
     #page content
     self.page_content='''
     '''
     #page end
     self.page_end='''
+    </body>
+</html>
     '''
     
 
