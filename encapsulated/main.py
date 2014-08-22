@@ -51,7 +51,7 @@ class MainHandler(webapp2.RequestHandler):
         nick.week3 = 8
         nick.week4 = 3
         
-        #page body holding content and links passing attribute values
+        #page body holding content and links - data is passed using URL variables which  will use the GET method to read from the URL.
         p.page_body = '''
         <div class="challengers">
             <ul>
@@ -65,7 +65,7 @@ class MainHandler(webapp2.RequestHandler):
         '''
         #check if GET exists
         if self.request.GET:
-            #GET attribute Values from url
+            #GET attribute Values from url and hold values in variables
             challenger_name = self.request.GET['challenger_name']
             week1 = self.request.GET['week1']
             week2 = self.request.GET['week2']
