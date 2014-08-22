@@ -25,13 +25,14 @@ class MainHandler(webapp2.RequestHandler):
         
         #use minidom to parse xml
         apixml = minidom.parse(api_result)
-        #target specific node by tagname
+        
+        #target element named IP
         ip = apixml.getElementsByTagName('ip')[0].firstChild.nodeValue
+        #target element named "countryName"
         country_name = apixml.getElementsByTagName('countryName')[0].firstChild.nodeValue
         
-        
         #write content with country_name to page content
-        p.page_content = "Country Name for this ip address is: " + str(country_name)
+        p.page_content = "The IP address: " + ip + " address is in country: " + str(country_name)
         
         #build out html page
         p.whole_page = p.page_head + p.page_content + p.page_end
