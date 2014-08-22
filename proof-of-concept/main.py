@@ -20,6 +20,8 @@ class MainHandler(webapp2.RequestHandler):
         api_request = urllib2.Request(api_url)
         #create api object opener
         api_object_opener = urllib2.build.opener()
+        #get info from api url
+        api_result = api_object_opener.open(api_request)
 
 #Page template holding and building html
 class PageTemplate(object):
