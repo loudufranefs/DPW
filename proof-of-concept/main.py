@@ -24,10 +24,8 @@ class MainHandler(webapp2.RequestHandler):
         print api_result
         #use minidom to parse xml
         apixml = minidom.parse(api_result)
-        element = apixml.getElementsByTagName('Hostip')[0].firstChild.nodeValue
-        print "element is: "
-        print element
-        p.page_content +=str(element)
+        element = apixml.getElementsByTagName('countryName')[0].firstChild.nodeValue
+        p.page_content = str(element)
         
         #write html page
         self.response.write(p.whole_page)
