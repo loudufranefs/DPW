@@ -19,9 +19,11 @@ class MainHandler(webapp2.RequestHandler):
         #create request using urllib2 library for api url
         api_request = urllib2.Request(api_url)
         #create api object opener
-        api_object_opener = urllib2.build.opener()
+        api_object_opener = urllib2.build_opener()
         #get info from api url
         api_result = api_object_opener.open(api_request)
+        #use minidom to parse xml
+        api_xml = minidom.parse(api_result)
 
 #Page template holding and building html
 class PageTemplate(object):
