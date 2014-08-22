@@ -16,6 +16,8 @@ class MainHandler(webapp2.RequestHandler):
         
         #get values from API url with hardcoded value
         api_url = "http://netflixroulette.net/api/api.php?title=Bodyguard"
+        #create request using urllib2 library for api url
+        api_request = urllib2.Request(api_url)
 
 #Page template holding and building html
 class PageTemplate(object):
