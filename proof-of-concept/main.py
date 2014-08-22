@@ -24,10 +24,12 @@ class MainHandler(webapp2.RequestHandler):
         print api_result
         #use minidom to parse xml
         apixml = minidom.parse(api_result)
-        element = apixml.getElementsByTagName('countryName')[0].firstChild.nodeValue
-        p.page_content = str(element)
+        country_name = apixml.getElementsByTagName('countryName')[0].firstChild.nodeValue
+        p.page_content = "Country Name for this ip address is: " + str(country_name)
         
         #write html page
+        #build out html page
+        p.whole_page = p.page_head + p.page_content + p.page_end
         self.response.write(p.whole_page)
 
 #Page template holding and building html
@@ -44,15 +46,12 @@ class PageTemplate(object):
     <p>This is a hardcoded example.</p>
         '''
         #page content
-        self.page_content='''
-        '''
+        self.page_content=''
         #page end html
         self.page_end='''
     </body>
 </html>
         '''
-        #build out html page
-        self.whole_page = self.page_head + self.page_content + self.page_end
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
