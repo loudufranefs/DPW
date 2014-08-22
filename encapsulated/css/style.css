@@ -55,6 +55,7 @@ h1 {
 #challenger {
 
     width: 80%;
+    min-height:200px;
     padding:20px;
     background: #fff;
     margin:auto;
@@ -63,13 +64,33 @@ h1 {
     border-radius: 5px;
     box-shadow: 0 0 20px rgb(200, 200, 200)
 } 
-#challenger h3 {} 
-#challenger ul {} 
-#challenger li {} 
+#challenger h3 {
+    float:left;
+    margin:20px;
+    padding: 20px;
+    background:#43BEDD;
+    font-size:32px;
+    line-height:140%;
+    text-align:center;
+     -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width:250px;
+} 
+#challenger ul {
+    
+    float:left;
+    width:300px;
+} 
+#challenger li {
+    list-style:none;
+    padding:5px;
+    border-bottom:1px dotted #ccc;
+} 
 #challenger > a {
     text-indent: -9999px;
     float:right;
-    margin: -5px -35px 0 0;
+    margin: -25px 0 0 0;
     background: url(../images/close.png) no-repeat;
     width:48px;
     height:48px;
