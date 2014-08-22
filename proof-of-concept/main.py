@@ -11,6 +11,10 @@ from xml.dom import minidom #importing minidom of parsing
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Hello world!')
+        
+class PageTemplate(object):
+    def __init__(self):
+    
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
