@@ -26,6 +26,7 @@ class MainHandler(webapp2.RequestHandler):
         #use minidom to parse xml
         apixml = minidom.parse(api_result)
         #target specific node by tagname
+        ip = apixml.getElementsByTagName('ip')[0].firstChild.nodeValue
         country_name = apixml.getElementsByTagName('countryName')[0].firstChild.nodeValue
         
         
