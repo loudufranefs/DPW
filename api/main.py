@@ -6,13 +6,9 @@ Class: Design Patterns for Web Programming
 '''
 
 #Assignment Notes
-#MVC approach
 #collect at least one piece of information
 #user can reset/submit - no back button
 #validate user input (only if Get exists)
-#abstract class (class only used as a template)
-#inheritence(sub class)
-#polymorphism(sub class overriding a function)
 
 import webapp2
 import urllib2 #importing urllib2 for url_info
@@ -36,7 +32,7 @@ class PageTemplate(object):
 <html>
     <head>
         <title>IP Info</title>
-        <link href="css/style.css"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
     </head>
     <body>
     <h2>IP info</h2>
@@ -60,11 +56,16 @@ class FormTemplate(PageTemplate):
     def __init__(self):
         #constructor function for super class
         super(FormTemplate, self).__init__()
-        self._test = '<form></form>'
+        self._form_start = '<form post="GET">'
+        self._form_inputs = '''
+        input fields will go here
+        '''
+        self._form_end = '</form>'
+        self._form = self._form_start + self._form_inputs + self._form_end
         
-    #POLYMORPHISM - overriding function
+    #POLYMORPHISM - method overriding
     def display_page(self):
-        return self._page_head + self._test + self._page_foot
+        return self._page_head + self._form + self._page_foot
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
