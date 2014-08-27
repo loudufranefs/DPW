@@ -20,8 +20,8 @@ from xml.dom import minidom #importing minidom of parsing
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        p = PageTemplate()
-        self.response.write(p.displayPage())
+        formPage = FormTemplate()
+        self.response.write(formPage.displayPage())
         
 
         #proof of concept code
@@ -30,6 +30,7 @@ class MainHandler(webapp2.RequestHandler):
         #I am using another API, still the same concept as the proof of concept
         #however this API allows me to get at least 6 pieces of information
         #where as the first API I used only had 5 relevant pieces of data.
+        '''
         api_url = "http://ip-api.com/xml/208.80.152.201"
         #create request using urllib2 library for api url
         api_request = urllib2.Request(api_url)
@@ -47,7 +48,7 @@ class MainHandler(webapp2.RequestHandler):
         zipcode = apixml.getElementsByTagName('zip')[0].firstChild.nodeValue
         city = apixml.getElementsByTagName('city')[0].firstChild.nodeValue
         country = apixml.getElementsByTagName('country')[0].firstChild.nodeValue
-        
+        '''
         
         
 #VIEW
@@ -89,16 +90,16 @@ class FormTemplate(PageTemplate):
     def __init__(self):
         
         #constructor function for super class
-        super(FormTemplate, self)__init__()
+        super(FormTemplate, self).__init__()
         
         #setting up form
-        self._form_start ='test'
-        self._form_end =''
+        self._form_start ='<form>'
+        self._form_end ='</form>'
         
-        #build whole form
-        self._form = self.form_start + seld.form_end
-        
-        
+        #POLYMORPHISM
+        #overriding function
+        def displayPage(self):
+            return self._page_head + 'test' + self._page_foot
 
 #MODEL
 #-recieve data
