@@ -46,7 +46,9 @@ class MainHandler(webapp2.RequestHandler):
 #VIEW
 #-display form
 #-display received data
-
+class IpView(object):
+    def __init__(self):
+        pass
 
 #abstract Class
 #this class will hold the page template
@@ -69,9 +71,17 @@ class PageTemplate(object):
 
 #MODEL
 #-recieve data
+class IpModel(object):
+    def __init__(self):
+        pass
+
 
 #CONTROLLER
 #-hold data
+class IpData(object):
+    def __init__(self):
+        pass
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
