@@ -56,11 +56,13 @@ class FormTemplate(PageTemplate):
     def __init__(self):
         #constructor function for super class
         super(FormTemplate, self).__init__()
-        self._form_start = '<form post="GET">'
+        self._form_start = '<form method="GET">'
         self._form_inputs = '''
         input fields will go here
         '''
         self._form_end = '</form>'
+        
+        #build form from form attributes
         self._form = self._form_start + self._form_inputs + self._form_end
         
     #POLYMORPHISM - method overriding
