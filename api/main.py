@@ -20,12 +20,16 @@ from xml.dom import minidom #importing minidom of parsing
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        
+        p = PageTemplate()
+        self.response.write(p.displayPage())
         
 
         #proof of concept code
         
-        #get values from API url with hardcoded value
+        #get values from API url
+        #I am using another API, still the same concept as the proof of concept
+        #however this API allows me to get at least 6 pieces of information
+        #where as the first API I used only had 5 relevant pieces of data.
         api_url = "http://ip-api.com/xml/208.80.152.201"
         #create request using urllib2 library for api url
         api_request = urllib2.Request(api_url)
@@ -44,7 +48,7 @@ class MainHandler(webapp2.RequestHandler):
         city = apixml.getElementsByTagName('city')[0].firstChild.nodeValue
         country = apixml.getElementsByTagName('country')[0].firstChild.nodeValue
         
-        self.response.write(country)
+        
         
 #VIEW
 #-display form
@@ -53,24 +57,48 @@ class IpView(object):
     def __init__(self):
         pass
 
-#abstract Class
+#ABSTRACT CLASS
 #this class will hold the page template
+#it will be used as a super class only
 class PageTemplate(object):
     def __init__(self):
         #page_header
-        page_head = '''<!doctype html>
+        self._page_head = '''<!doctype html>
 <html>
     <head>
         <title>IP Info</title>
         <link href="css/style.css"/>
     </head>
     <body>
+    <h2>IP info</h2>
         '''
         #page footer
-        page_foot = '''
+        self._page_foot = '''
     </body>
 </html>
         '''
+    #function to display html
+    def displayPage(self):
+        return self._page_head + self._page_foot
+        
+        
+#INHERITENCE
+#this class will hold the the form,
+#it inherits from the pageTemplate class.
+class FormTemplate(PageTemplate):
+    def __init__(self):
+        
+        #constructor function for super class
+        super(FormTemplate, self)__init__()
+        
+        #setting up form
+        self._form_start ='test'
+        self._form_end =''
+        
+        #build whole form
+        self._form = self.form_start + seld.form_end
+        
+        
 
 #MODEL
 #-recieve data
