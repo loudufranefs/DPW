@@ -48,6 +48,25 @@ class MainHandler(webapp2.RequestHandler):
 #-display received data
 
 
+#abstract Class
+#this class will hold the page template
+class PageTemplate(object):
+    def __init__(self):
+        #page_header
+        page_head = '''<!doctype html>
+<html>
+    <head>
+        <title>IP Info</title>
+        <link href="css/style.css"/>
+    </head>
+    <body>
+        '''
+        #page footer
+        page_foot = '''
+    </body>
+</html>
+        '''
+
 #MODEL
 #-recieve data
 
