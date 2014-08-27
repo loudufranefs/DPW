@@ -17,6 +17,9 @@ Class: Design Patterns for Web Programming
 import webapp2
 import urllib2 #importing urllib2 for url_info
 from xml.dom import minidom #importing minidom of parsing
+from view import IpView #import View Class
+from controller import IpData #import Controller Class
+from model import IpModel #import Model Class
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -49,14 +52,7 @@ class MainHandler(webapp2.RequestHandler):
         city = apixml.getElementsByTagName('city')[0].firstChild.nodeValue
         country = apixml.getElementsByTagName('country')[0].firstChild.nodeValue
         '''
-        
-        
-#VIEW
-#-display form
-#-display received data
-class IpView(object):
-    def __init__(self):
-        pass
+
 
 #ABSTRACT CLASS
 #this class will hold the page template
@@ -100,19 +96,6 @@ class FormTemplate(PageTemplate):
         #overriding function
         def displayPage(self):
             return self._page_head + 'test' + self._page_foot
-
-#MODEL
-#-recieve data
-class IpModel(object):
-    def __init__(self):
-        pass
-
-
-#CONTROLLER
-#-hold data
-class IpData(object):
-    def __init__(self):
-        pass
 
 
 app = webapp2.WSGIApplication([
