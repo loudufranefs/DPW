@@ -21,6 +21,40 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         p = FormTemplate()
         self.response.write(p.display_page())
+        
+        
+        #get values from API url
+
+        #api_url = "http://ip-api.com/xml/73.55.157.119"
+        api_url = "http://api.hostip.info/?ip=12.215.42.19"
+        #create request using urllib2 library for api url
+        api_request = urllib2.Request(api_url)
+        #create api object opener
+        api_opener = urllib2.build_opener()
+        #get info from api url
+        api_result = api_opener.open(api_request)
+
+        #use minidom to parse xml
+        apixml = minidom.parse(api_result)
+        
+        list = apixml.getElementsByTagName('gml:featureMember')
+        self.response.write(list)
+        '''
+        for item in list:
+            do = IpData()
+            do.country = item.getNamedItem('countryName').nodeValue
+            self.response.write(do.country)
+        '''
+
+        '''
+        #setting up variables for return values temporarily
+        timezone = apixml.getElementsByTagName('timezone')[0].firstChild.nodeValue
+        lon = apixml.getElementsByTagName('lon')[0].firstChild.nodeValue
+        lat = apixml.getElementsByTagName('lat')[0].firstChild.nodeValue
+        zipcode = apixml.getElementsByTagName('zip')[0].firstChild.nodeValue
+        city = apixml.getElementsByTagName('city')[0].firstChild.nodeValue
+        country = apixml.getElementsByTagName('country')[0].firstChild.nodeValue
+        '''
 
 #ABSTRACT CLASS
 #this class will hold the page template
