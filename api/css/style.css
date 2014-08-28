@@ -1,2 +1,7 @@
-body {background: #eee;}
-h2 {color: red;}
+body {
+    margin:0;
+    padding:0;
+    font:16px/140% Arial, Helvetica, sans-serif;
+}
+
+#wrapper {max-width:960px; margin:auto;}
