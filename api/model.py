@@ -22,19 +22,28 @@ class IpModel(object):
         #get info from api url
         api_result = api_opener.open(api_request)
         #Parsing Data
-        self.__api_json = json.load(api_result)
+        api_json = json.load(api_result)
         
+        self._api_array = []
         #accessing controller
         ip_data = IpData()
         #fetching data from API to store in the controller
-        ip_data.country = self.__api_json['country'] #fetch country
-        ip_data.state = self.__api_json['region'] #fetch region
-        ip_data.city = self.__api_json['city'] #fetch city
-        ip_data.zipcode = self.__api_json['postal_code'] #fetch zip
-        ip_data.timezone = self.__api_json['timezone'] #fetch timezone
-        ip_data.lan = self.__api_json['longitude'] #fetch longitude
-        ip_data.lon = self.__api_json['latitude'] #fetch latitude
+        ip_data.country = api_json['country'] #fetch country
+        ip_data.state = api_json['region'] #fetch region
+        ip_data.city = api_json['city'] #fetch city
+        ip_data.zipcode = api_json['postal_code'] #fetch zip
+        ip_data.timezone = api_json['timezone'] #fetch timezone
+        ip_data.lon = api_json['longitude'] #fetch longitude
+        ip_data.lat = api_json['latitude'] #fetch latitude
         
+        #filling array with fetched data
+        self._api_array = [ip_data.country, ip_data.state, ip_data.city, ip_data.zipcode, ip_data.timezone, ip_data.lat, ip_data.lon]
+    
+    
+    # getter for array so it can be accessed.
+    @property
+    def api_array(self):
+        return self._api_array
     
     #getter for ip value
     @property

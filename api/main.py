@@ -29,10 +29,9 @@ class MainHandler(webapp2.RequestHandler):
         ic = IpData()
         
         
+        im.callApi()
+        self.response.write(im.api_array)
 
-        
-        
-        
 
 
 
