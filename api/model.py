@@ -24,7 +24,7 @@ class IpModel(object):
         #Parsing Data
         self.__api_json = json.load(api_result)
         
-        self.__model_array = []
+        self.__model_array = dict()
         #accessing controller
         ip_data = IpData()
         #fetching data from API to store in the controller
@@ -38,7 +38,8 @@ class IpModel(object):
         
         
         #filling array with fetched data
-        self.__model_array = [str(ip_data.country), str(ip_data.state), str(ip_data.city), str(ip_data.zipcode), str(ip_data.timezone), ip_data.lat, ip_data.lon]
+        
+        self.__model_array = {'country':str(ip_data.country), 'state':str(ip_data.state), 'city':str(ip_data.city), 'zipcode':str(ip_data.zipcode), 'timezone':str(ip_data.timezone), 'lat':ip_data.lat, 'lon':ip_data.lon}
     
     
     # getter for array so it can be accessed.

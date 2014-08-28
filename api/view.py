@@ -5,12 +5,11 @@
 class IpView(object):
     def __init__(self):
         #array to hold data from model
-        self.__view_array = []
-        self.__content = 'test'
+        self.__view_array = dict()
+        self.__content = ''
     
     def update(self):
-        
-        self.__content += 'test' + self.__view_array[1]
+        self.__content += self.__view_array['country']
 
         
     #getter for content
