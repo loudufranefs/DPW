@@ -12,7 +12,7 @@ Class: Design Patterns for Web Programming
 
 import webapp2
 import urllib2 #importing urllib2 for url_info
-from xml.dom import minidom #importing minidom of parsing
+import json #parsing json
 from view import IpView #import View Class
 from controller import IpData #import Controller Class
 from model import IpModel #import Model Class
@@ -24,9 +24,9 @@ class MainHandler(webapp2.RequestHandler):
         
         
         #get values from API url
-
-        #api_url = "http://ip-api.com/xml/73.55.157.119"
-        api_url = "http://api.hostip.info/?ip=12.215.42.19"
+        #Using new API that allows me to fetch more data.
+        # new API is JSON instead of xml - xml was not available for this API
+        api_url = "http://www.telize.com/geoip/208.80.152.201"
         #create request using urllib2 library for api url
         api_request = urllib2.Request(api_url)
         #create api object opener
@@ -34,27 +34,11 @@ class MainHandler(webapp2.RequestHandler):
         #get info from api url
         api_result = api_opener.open(api_request)
 
-        #use minidom to parse xml
-        apixml = minidom.parse(api_result)
+        api_json = json.load(api_result)
+        self.response.write(api_json)
         
-        list = apixml.getElementsByTagName('gml:featureMember')
-        self.response.write(list)
-        '''
-        for item in list:
-            do = IpData()
-            do.country = item.getNamedItem('countryName').nodeValue
-            self.response.write(do.country)
-        '''
 
-        '''
-        #setting up variables for return values temporarily
-        timezone = apixml.getElementsByTagName('timezone')[0].firstChild.nodeValue
-        lon = apixml.getElementsByTagName('lon')[0].firstChild.nodeValue
-        lat = apixml.getElementsByTagName('lat')[0].firstChild.nodeValue
-        zipcode = apixml.getElementsByTagName('zip')[0].firstChild.nodeValue
-        city = apixml.getElementsByTagName('city')[0].firstChild.nodeValue
-        country = apixml.getElementsByTagName('country')[0].firstChild.nodeValue
-        '''
+
 
 #ABSTRACT CLASS
 #this class will hold the page template
