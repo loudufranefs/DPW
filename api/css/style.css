@@ -47,3 +47,9 @@ input[type="submit"]{
     float:left;
     margin-left:40px;
 }
+#map img{
+    border:10px solid #ccc;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}

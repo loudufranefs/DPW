@@ -1,6 +1,4 @@
-#VIEW
-#-display form
-#-display received data
+#VIEW object will handle showing results
 class IpView(object):
     def __init__(self):
         #array to hold data from model
@@ -13,16 +11,15 @@ class IpView(object):
         <div class="resultList">
         <ul>
         '''
-        self.__content += '<li>Country: ' + self.__view_array['country'] + '</li>'
-        self.__content += '<li>Region: ' + str(self.__view_array['region']) + '</li>'
-        self.__content += '<li>City: ' + str(self.__view_array['city']) + '</li>'
-        self.__content += '<li>Zip: ' + str(self.__view_array['zipcode']) + '</li>'
-        self.__content += '<li>lat: ' + str(self.__view_array['lat']) + '</li>'
-        self.__content += '<li>lon: ' + str(self.__view_array['lon']) + '</li>'
-        self.__content += '<li>timezone: ' + str(self.__view_array['timezone']) + '</li>'
+        
         #using another API to fetch flag image based on country code
         #the value needs to be converted to lowercase to work properly
-        self.__content += '<li><img src="http://flagpedia.net/data/flags/mini/' + str(self.__view_array['code']).lower() + '.png" /></li>'
+        self.__content += '<li><img src="http://flagpedia.net/data/flags/mini/' + str(self.__view_array['code']).lower() + '.png" /> The IP you entered is in the ' + self.__view_array['country'] + '</li>'
+        self.__content += '<li>City: ' + str(self.__view_array['city']) + '</li>'
+        self.__content += '<li>Zip Code: ' + str(self.__view_array['zipcode']) + '</li>'
+        self.__content += '<li>State/Region: ' + str(self.__view_array['region']) + '</li>'
+        self.__content += '<li>Latitude and Longitude: ( ' + str(self.__view_array['lat']) + ' , '+ str(self.__view_array['lon']) + ' ) </li>'
+        self.__content += '<li>timezone: ' + str(self.__view_array['timezone']) + '</li>'
         #end list
         self.__content += '</ul>'
         #Generating map from Google API using the values brought in from the IP API
