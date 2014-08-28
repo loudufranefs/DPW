@@ -31,3 +31,13 @@ class IpModel(object):
         ip_data.timezone = api_json['timezone'] #fetch timezone
         ip_data.lan = api_json['longitude'] #fetch longitude
         ip_data.lon = api_json['latitude'] #fetch latitude
+    
+    #getter for ip value
+    @property
+    def ip(self):
+        pass
+    
+    #setter to change input value
+    @ip.setter
+    def ip(self, input_value):
+        self.__ip = input_value
