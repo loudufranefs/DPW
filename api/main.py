@@ -48,7 +48,9 @@ class FormTemplate(PageTemplate):
         #constructor function for super class
         super(FormTemplate, self).__init__()
         #attribute for starting the form
-        self._form_start = '<form method="GET">'
+        self._form_start = '''<form method="GET">
+        <h3>Enter an IP Address to get started...</h3>
+        '''
         #attribute for ending the form
         self._form_end = '</form>'
         
