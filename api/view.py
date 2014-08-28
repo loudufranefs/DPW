@@ -16,9 +16,7 @@ class IpView(object):
         self.__content += '<br>lon: ' + str(self.__view_array['lon'])
         self.__content += '<br>timezone: ' + str(self.__view_array['timezone'])
         #html for map
-        self.__content += '''
-        <div id="map"><img src="http://maps.googleapis.com/maps/api/staticmap?center='+str(self.__view_array['lat']) + ','+str(self.__view_array['lon'])+'&zoom=12&size=400x400&maptype=roadmap" /></div>
-        '''
+        self.__content += '<div id="map"><img src="http://maps.googleapis.com/maps/api/staticmap?center=' +str(self.__view_array['lat']) + ','+str(self.__view_array['lon'])+'&zoom=12&size=400x400&maptype=roadmap&markers=size:mid%7Ccolor:red%7C'+ str(self.__view_array['city'])+ '" /></div>'
 
         
     #getter for content
