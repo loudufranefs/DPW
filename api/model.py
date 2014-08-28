@@ -40,9 +40,11 @@ class IpModel(object):
         ip_data.lat = self._api_json['latitude'] #fetch latitude
         ip_data.code = self._api_json['country_code'] #fetch latitude
         ip_data.area_code = self._api_json['area_code'] #fetch latitude
-        
+
         #filling dictionary with fetched data
         self.__model_array = {'country':ip_data.country, 'region':ip_data.region, 'city':ip_data.city, 'zipcode':ip_data.zipcode, 'timezone':ip_data.timezone, 'lat':ip_data.lat, 'lon':ip_data.lon, 'code':ip_data.code,'area_code':ip_data.area_code}
+
+        
 
     #getter for ip value
     @property
@@ -50,11 +52,13 @@ class IpModel(object):
         pass
     
     #setter to change input value
+    #this will be used in the GET method and added to the URL parameter
     @ip.setter
     def ip(self, get_value):
         self.__ip = get_value
     
     # getter for array so it can be accessed.
+    #this array will pass the data over to the view object
     @property
     def model_array(self):
         return self.__model_array

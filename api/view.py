@@ -3,7 +3,9 @@ class IpView(object):
     def __init__(self):
         #array to hold data from model
         self.__view_array = dict()
+        #private attribute that will hold the page content
         self.__content = ''
+    
     #function that will be executed when view_array gets values from model
     def update(self):
         #Building html to show the values that were passed from the model
@@ -11,7 +13,7 @@ class IpView(object):
         <div class="resultList">
         <ul>
         '''
-        
+    
         #using another API to fetch flag image based on country code
         #the value needs to be converted to lowercase to work properly
         self.__content += '<li><img src="http://flagpedia.net/data/flags/mini/' + str(self.__view_array['code']).lower() + '.png" /> The IP you entered is in the ' + self.__view_array['country'] + '</li>'
@@ -24,10 +26,12 @@ class IpView(object):
         #end list
         self.__content += '</ul>'
         #Generating map from Google API using the values brought in from the IP API
+        #map updates based on latitude and longitude
         self.__content += '<div id="map"><img src="http://maps.googleapis.com/maps/api/staticmap?center=' +str(self.__view_array['lat']) + ','+str(self.__view_array['lon'])+'&zoom=12&size=400x300&maptype=roadmap&markers=size:mid%7Ccolor:red%7C'+ str(self.__view_array['city'])+ '" /></div>'
         self.__content += '</div>'
-    
-        #add footer
+        
+        
+        #additional content to finish off the page with credit information and links.
         self.__content += '''
         <div id="credits">
         Thank you for using this web app.
@@ -37,8 +41,7 @@ class IpView(object):
         
         '''
 
-        
-    #getter for content
+    #getter for private attribute content, to be accessed when html is generated
     @property 
     def content(self):
         return self.__content
