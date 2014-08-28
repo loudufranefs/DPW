@@ -8,45 +8,41 @@ class IpModel(object):
         #get values from API url
         #Using new API that allows me to fetch more data.
         # new API is JSON instead of xml - xml was not available for this API
-        self.__api_url = "http://www.telize.com/geoip/"
+        self.__api_url = "http://ip.pycox.com/json/"
         #holds input value
-        self.__ip = '208.80.152.201'
+        self.__ip = ''
         #holds variable for parsing API data
         self.__api_json = ''
         
     def callApi(self):
         #create request using urllib2 library for api url
         api_request = urllib2.Request(self.__api_url+self.__ip)
+
         #create api object opener
         api_opener = urllib2.build_opener()
         #get info from api url
         api_result = api_opener.open(api_request)
         #Parsing Data
-        self.__api_json = json.load(api_result)
+        self._api_json = json.load(api_result)
         
+        
+        #dictionary object to hold the fetched data
         self.__model_array = dict()
         #accessing controller
         ip_data = IpData()
         #fetching data from API to store in the controller
-        ip_data.country = self.__api_json['country'] #fetch country
-        ip_data.state = self.__api_json['region'] #fetch region
-        ip_data.city = self.__api_json['city'] #fetch city
-        ip_data.zipcode = self.__api_json['postal_code'] #fetch zip
-        ip_data.timezone = self.__api_json['timezone'] #fetch timezone
-        ip_data.lon = self.__api_json['longitude'] #fetch longitude
-        ip_data.lat = self.__api_json['latitude'] #fetch latitude
-        
+        ip_data.country = self._api_json['country_name'] #fetch country
+        ip_data.region = self._api_json['region_name'] #fetch region
+        ip_data.city = self._api_json['city'] #fetch city
+        ip_data.zipcode = self._api_json['postal_code'] #fetch zip
+        ip_data.timezone = self._api_json['time_zone'] #fetch timezone
+        ip_data.lon = self._api_json['longitude'] #fetch longitude
+        ip_data.lat = self._api_json['latitude'] #fetch latitude
         
         #filling array with fetched data
         
-        self.__model_array = {'country':str(ip_data.country), 'state':str(ip_data.state), 'city':str(ip_data.city), 'zipcode':str(ip_data.zipcode), 'timezone':str(ip_data.timezone), 'lat':ip_data.lat, 'lon':ip_data.lon}
-    
-    
-    # getter for array so it can be accessed.
-    @property
-    def model_array(self):
-        return self.__model_array
-    
+        self.__model_array = {'country':ip_data.country, 'region':ip_data.region, 'city':ip_data.city, 'zipcode':ip_data.zipcode, 'timezone':ip_data.timezone, 'lat':ip_data.lat, 'lon':ip_data.lon}
+
     #getter for ip value
     @property
     def ip(self):
@@ -54,5 +50,11 @@ class IpModel(object):
     
     #setter to change input value
     @ip.setter
-    def ip(self, input_value):
-        self.__ip = input_value
+    def ip(self, get_value):
+        self.__ip = get_value
+    
+    # getter for array so it can be accessed.
+    @property
+    def model_array(self):
+        return self.__model_array
+    

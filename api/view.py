@@ -1,4 +1,3 @@
-
 #VIEW
 #-display form
 #-display received data
@@ -9,7 +8,13 @@ class IpView(object):
         self.__content = ''
     
     def update(self):
-        self.__content += self.__view_array['country']
+        self.__content += 'Country: ' + self.__view_array['country']
+        self.__content += '<br>Region: ' + str(self.__view_array['region'])
+        self.__content += '<br>City: ' + str(self.__view_array['city'])
+        self.__content += '<br>Zip: ' + str(self.__view_array['zipcode'])
+        self.__content += '<br>lat: ' + str(self.__view_array['lat'])
+        self.__content += '<br>lon: ' + str(self.__view_array['lon'])
+        self.__content += '<br>timezone: ' + str(self.__view_array['timezone'])
 
         
     #getter for content

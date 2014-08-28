@@ -20,17 +20,19 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         #access template that will display the form
         p = FormTemplate()
+        #array of input fields
         p.input_fields = [['ip', 'text', 'IP Address'],['submit', 'submit']]
         
-        ### IF REQUEST WILL GO HERE ONCE THERE"S A FORM
+        #Only if there's a GET
+        if self.request.GET:
+            im = IpModel() #model instance
+            im.ip = self.request.GET['ip'] #get IP from URL
+            im.callApi() #connects to the API
         
-        im = IpModel() #model instance
-        im.callApi() #connects to the API
-        
-        iv = IpView() #view instance
-        iv.view_array = im.model_array # data from model inserted into them into the view object
+            iv = IpView() #view instance
+            iv.view_array = im.model_array # data from model inserted into them into the view object
         #add content generated in View object to the page content
-        p._page_content = iv.content
+            p._page_content = iv.content
         
         
         self.response.write(p.display_page())
@@ -51,6 +53,8 @@ class FormTemplate(PageTemplate):
         
         #array to hold form fields
         self.__form_inputs = []
+        #attribute will be used to form the html from the form_inputs array
+        self._inputs =''
         
     
     @property #getter for input fields
@@ -62,15 +66,22 @@ class FormTemplate(PageTemplate):
         #settings the value to the value coming in through the function.
         self.__form_inputs = fields_array
         
-        #looping through the array
+        #looping through the array to generate html for input fields
         for item in fields_array:
-            print item
+            #generate input field
+            self._inputs +='<input type="' + item[1] + '" name="' + item[0] + '"'
+            #check if there's item[2] and generate the rest of the input field
+            try:
+                self._inputs += ' placeholder="' + item[2] + '" />'
+            #otherwise end the input field tag
+            except:
+                self._inputs +=' />'
             
     
         
     #POLYMORPHISM - method overriding
     def display_page(self):
-        return self._page_head + self._form_start + self._form_end + self._page_content + self._page_foot
+        return self._page_head + self._form_start + self._inputs + self._form_end + self._page_content + self._page_foot
     
     
 

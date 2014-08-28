@@ -6,7 +6,7 @@ class IpData(object):
         #setting up data object data fetched by model
         self.ip=''
         self.country=''
-        self.state=''
+        self.region=''
         self.city=''
         self.zipcode =''
         self.timezone =''
