@@ -34,10 +34,18 @@ class MainHandler(webapp2.RequestHandler):
         #get info from api url
         api_result = api_opener.open(api_request)
 
+        #Parsing Json
         api_json = json.load(api_result)
-        self.response.write(api_json)
         
-
+        #fetching data from API to store in the controlelr
+        ip_data = IpData()
+        ip_data.country = api_json['country']
+        ip_data.state = api_json['region']
+        ip_data.city = api_json['city']
+        ip_data.zipcode = api_json['postal_code']
+        ip_data.timezone = api_json['timezone']
+        ip_data.lan = api_json['longitude']
+        ip_data.lon = api_json['latitude']
 
 
 #ABSTRACT CLASS
