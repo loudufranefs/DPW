@@ -5,10 +5,8 @@ Assignment: API
 Class: Design Patterns for Web Programming
 '''
 
-
 import webapp2
 from view import IpView #import View Class
-from controller import IpData #import Controller Class
 from model import IpModel #import Model Class
 from pageTemplate import PageTemplate
 

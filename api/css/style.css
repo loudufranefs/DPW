@@ -3,7 +3,6 @@ body {
     padding:0;
     font:16px/140% Arial, Helvetica, sans-serif;
 }
-
 #wrapper {max-width:960px; margin:auto;}
 
 /*FORM*/
@@ -30,4 +29,21 @@ input[type="submit"]{
     border:1px solid #0370b4;
     color: #fff;
     box-sizing:content-box;
+}
+
+/*Results*/
+.resultList {margin:40px auto 0 auto;}
+.resultList ul{
+    float:left;
+    width:40%;
+    list-style: none;
+}
+.resultList li{
+    border-bottom:1px dotted #ccc;
+    padding:10px 0;
+}
+
+#map {
+    float:left;
+    margin-left:40px;
 }

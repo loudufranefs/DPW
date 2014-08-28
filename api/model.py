@@ -39,7 +39,6 @@ class IpModel(object):
         ip_data.lon = self._api_json['longitude'] #fetch longitude
         ip_data.lat = self._api_json['latitude'] #fetch latitude
         ip_data.code = self._api_json['country_code'] #fetch latitude
-        
         #filling array with fetched data
         
         self.__model_array = {'country':ip_data.country, 'region':ip_data.region, 'city':ip_data.city, 'zipcode':ip_data.zipcode, 'timezone':ip_data.timezone, 'lat':ip_data.lat, 'lon':ip_data.lon, 'code':ip_data.code}

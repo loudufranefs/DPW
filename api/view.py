@@ -6,7 +6,6 @@ class IpView(object):
         #array to hold data from model
         self.__view_array = dict()
         self.__content = ''
-    
     #function that will be executed when view_array gets values from model
     def update(self):
         #Building html to show the values that were passed from the model
@@ -27,7 +26,7 @@ class IpView(object):
         #end list
         self.__content += '</ul>'
         #Generating map from Google API using the values brought in from the IP API
-        self.__content += '<div id="map"><img src="http://maps.googleapis.com/maps/api/staticmap?center=' +str(self.__view_array['lat']) + ','+str(self.__view_array['lon'])+'&zoom=12&size=400x400&maptype=roadmap&markers=size:mid%7Ccolor:red%7C'+ str(self.__view_array['city'])+ '" /></div>'
+        self.__content += '<div id="map"><img src="http://maps.googleapis.com/maps/api/staticmap?center=' +str(self.__view_array['lat']) + ','+str(self.__view_array['lon'])+'&zoom=12&size=400x300&maptype=roadmap&markers=size:mid%7Ccolor:red%7C'+ str(self.__view_array['city'])+ '" /></div>'
         self.__content += '</div>'
 
         
