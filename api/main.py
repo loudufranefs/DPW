@@ -22,30 +22,7 @@ class MainHandler(webapp2.RequestHandler):
         p = FormTemplate()
         self.response.write(p.display_page())
         
-        
-        #get values from API url
-        #Using new API that allows me to fetch more data.
-        # new API is JSON instead of xml - xml was not available for this API
-        api_url = "http://www.telize.com/geoip/208.80.152.201"
-        #create request using urllib2 library for api url
-        api_request = urllib2.Request(api_url)
-        #create api object opener
-        api_opener = urllib2.build_opener()
-        #get info from api url
-        api_result = api_opener.open(api_request)
 
-        #Parsing Json
-        api_json = json.load(api_result)
-        
-        #fetching data from API to store in the controlelr
-        ip_data = IpData()
-        ip_data.country = api_json['country']
-        ip_data.state = api_json['region']
-        ip_data.city = api_json['city']
-        ip_data.zipcode = api_json['postal_code']
-        ip_data.timezone = api_json['timezone']
-        ip_data.lan = api_json['longitude']
-        ip_data.lon = api_json['latitude']
 
 
 #ABSTRACT CLASS
