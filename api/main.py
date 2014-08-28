@@ -20,7 +20,6 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         #access template that will display the form
         p = FormTemplate()
-        self.response.write(p.display_page())
         
         ### IF REQUEST WILL GO HERE ONCE THERE"S A FORM
         
@@ -29,10 +28,11 @@ class MainHandler(webapp2.RequestHandler):
         
         iv = IpView() #view instance
         iv.view_array = im.model_array # data from model inserted into them into the view object
+        #add content generated in View object to the page content
+        p._page_content = iv.content
         
         
-        
-        self.response.write(iv.content)
+        self.response.write(p.display_page())
 
 
 
@@ -54,7 +54,7 @@ class FormTemplate(PageTemplate):
         
     #POLYMORPHISM - method overriding
     def display_page(self):
-        return self._page_head + self._form + self._page_foot
+        return self._page_head + self._form + self._page_content + self._page_foot
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
