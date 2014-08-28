@@ -19,7 +19,8 @@ class IpView(object):
         self.__content += '<li>Zip Code: ' + str(self.__view_array['zipcode']) + '</li>'
         self.__content += '<li>State/Region: ' + str(self.__view_array['region']) + '</li>'
         self.__content += '<li>Latitude and Longitude: ( ' + str(self.__view_array['lat']) + ' , '+ str(self.__view_array['lon']) + ' ) </li>'
-        self.__content += '<li>timezone: ' + str(self.__view_array['timezone']) + '</li>'
+        self.__content += '<li>Timezone: ' + str(self.__view_array['timezone']) + '</li>'
+        self.__content += '<li>Area Code: ' + str(self.__view_array['area_code']) + '</li>'
         #end list
         self.__content += '</ul>'
         #Generating map from Google API using the values brought in from the IP API

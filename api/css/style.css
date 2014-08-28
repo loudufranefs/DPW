@@ -2,9 +2,22 @@ body {
     margin:0;
     padding:0;
     font:16px/140% Arial, Helvetica, sans-serif;
+    background: #fff url(../images/bg.png) repeat-x left -30px;
 }
-#wrapper {max-width:960px; margin:auto;}
-
+#wrapper {
+    max-width:960px; 
+    margin:0 auto;
+    background: url(../images/map.png) no-repeat center -30px;
+    min-height:400px;
+}
+h1{
+    margin:0;
+    padding:0;
+    background: url(../images/logo.png) no-repeat;
+    width:338px;
+    height:108px;
+    text-indent:  -9999px;
+}
 #alert {
     background: #f4dbdb;
     color: #b51616;
@@ -15,7 +28,16 @@ body {
 }
 
 /*FORM*/
-form{text-align:center;}
+form{
+    text-align:center;
+    margin:40px auto 0px;
+    background: #fff;
+    width:600px;
+    padding:10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
 input{
     height:40px;
     line-height: 40px;

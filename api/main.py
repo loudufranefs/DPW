@@ -8,6 +8,7 @@ Class: Design Patterns for Web Programming
 import webapp2
 from view import IpView #import View Class
 from model import IpModel #import Model Class
+from controller import IpData #import controller Class
 from pageTemplate import PageTemplate
 
 class MainHandler(webapp2.RequestHandler):
@@ -25,6 +26,7 @@ class MainHandler(webapp2.RequestHandler):
         
             iv = IpView() #view instance
             iv.view_array = im.model_array # data from model inserted into them into the view object
+            
             #add content generated in View object to the page content
             #check that GET ip variable is not null value
             if self.request.GET['ip'] != '':
@@ -33,7 +35,7 @@ class MainHandler(webapp2.RequestHandler):
                 #if there's no value, indicate to user that they should enter an ip address
                 p._page_content = '<div id="alert">Please add an IP Address</div>'
         
-        
+        #call display_page function to generate page content
         self.response.write(p.display_page())
 
 
