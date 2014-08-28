@@ -43,14 +43,24 @@ class FormTemplate(PageTemplate):
     def __init__(self):
         #constructor function for super class
         super(FormTemplate, self).__init__()
+        #attribute for starting the form
         self._form_start = '<form method="GET">'
-        self._form_inputs = '''
-        input fields will go here
-        '''
+        #attribute for ending the form
         self._form_end = '</form>'
         
+        #array to hold form fields
+        self.__form_inputs = []
+        
         #build form from form attributes
-        self._form = self._form_start + self._form_inputs + self._form_end
+        self._form = self._form_start + self.__form_inputs + self._form_end
+    
+    @property #getter for input fields
+    def inut_fields(self)
+        pass
+    
+    @input_fields.setter #setter for input fields
+    def inut_fields(self, fields_array)
+        pass
         
     #POLYMORPHISM - method overriding
     def display_page(self):
