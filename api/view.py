@@ -5,6 +5,13 @@ class IpView(object):
     def __init__(self):
         #array to hold data from model
         self.__view_array = []
+        self.__content = 'test'
+    
+    def update(self):
+        for do in self.__view_array:
+            self.__content += do.country
+            
+    
     
     #getter for private array
     @property 
