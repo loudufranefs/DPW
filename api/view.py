@@ -21,7 +21,9 @@ class IpView(object):
         self.__content += '<li>lat: ' + str(self.__view_array['lat']) + '</li>'
         self.__content += '<li>lon: ' + str(self.__view_array['lon']) + '</li>'
         self.__content += '<li>timezone: ' + str(self.__view_array['timezone']) + '</li>'
-        self.__content += '<li>code: ' + str(self.__view_array['code']) + '</li>'
+        #using another API to fetch flag image based on country code
+        #the value needs to be converted to lowercase to work properly
+        self.__content += '<li><img src="http://flagpedia.net/data/flags/mini/' + str(self.__view_array['code']).lower() + '.png" /></li>'
         #end list
         self.__content += '</ul>'
         #Generating map from Google API using the values brought in from the IP API
