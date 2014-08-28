@@ -21,18 +21,17 @@ class MainHandler(webapp2.RequestHandler):
         p = FormTemplate()
         self.response.write(p.display_page())
         
+        ### IF REQUEST WILL GO HERE ONCE THERE"S A FORM
+        
         im = IpModel() #model instance
         im.callApi() #connects to the API
         
         iv = IpView() #view instance
-        iv.view_array = im.api_array #takes data from model and inserts them into the view object
-        
-        
-        ic = IpData()#controller instance
+        iv.view_array = im.model_array # data from model inserted into them into the view object
         
         
         
-        self.response.write(im.api_array)
+        self.response.write(iv.view_array)
 
 
 

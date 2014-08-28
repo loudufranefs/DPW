@@ -1,3 +1,4 @@
+
 #VIEW
 #-display form
 #-display received data
@@ -8,13 +9,17 @@ class IpView(object):
         self.__content = 'test'
     
     def update(self):
-        for do in self.__view_array:
-            self.__content += do.country
-            
-    
+        
+        self.__content += 'test' + self.__view_array[1]
+
+        
+    #getter for content
+    @property 
+    def content(self):
+        return self.__content
     
     #getter for private array
-    @property 
+    @property
     def view_array(self):
         pass
     
@@ -22,3 +27,4 @@ class IpView(object):
     @view_array.setter
     def view_array(self, arr):
         self.__view_array = arr
+        self.update()
