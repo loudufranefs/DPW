@@ -12,3 +12,4 @@ class IpData(object):
         self.timezone =''
         self.lon =''
         self.lat=''
+        self.code=''

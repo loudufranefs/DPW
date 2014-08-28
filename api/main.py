@@ -5,10 +5,6 @@ Assignment: API
 Class: Design Patterns for Web Programming
 '''
 
-#Assignment Notes
-#collect at least one piece of information
-#user can reset/submit - no back button
-#validate user input (only if Get exists)
 
 import webapp2
 from view import IpView #import View Class
@@ -82,8 +78,6 @@ class FormTemplate(PageTemplate):
             except:
                 self._inputs +=' />'
             
-    
-        
     #POLYMORPHISM - method overriding
     def display_page(self):
         return self._page_head + self._form_start + self._inputs + self._form_end + self._page_content + self._page_foot

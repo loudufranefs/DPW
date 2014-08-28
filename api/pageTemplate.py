@@ -11,15 +11,18 @@ class PageTemplate(object):
         <link rel="stylesheet" href="css/style.css" type="text/css" />
     </head>
     <body>
-    <h2>IP info</h2>
+        <div id="wrapper">
+        <h1>IP 2 Location</h1>
         '''
         #empty variable to hold page content
         self._page_content =''
         #page footer
         self._page_foot = '''
+        </div>
     </body>
 </html>
         '''
     #function to display html
     def display_page(self):
+        #concatenate head and foot (content is not necessary at this point, and will be used in the sub class)
         return self._page_head + self._page_foot
