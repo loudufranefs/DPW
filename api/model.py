@@ -1,3 +1,6 @@
+import urllib2 #importing urllib2 for url_info
+import json #parsing json
+from controller import IpData #import Controller Class
 #MODEL
 #-recieve data
 class IpModel(object):
@@ -13,24 +16,25 @@ class IpModel(object):
         
     def callApi(self):
         #create request using urllib2 library for api url
-        api_request = urllib2.Request(api_url+self.__ip)
+        api_request = urllib2.Request(self.__api_url+self.__ip)
         #create api object opener
         api_opener = urllib2.build_opener()
         #get info from api url
         api_result = api_opener.open(api_request)
-
         #Parsing Data
         self.__api_json = json.load(api_result)
         
-        #fetching data from API to store in the controlelr
+        #accessing controller
         ip_data = IpData()
-        ip_data.country = api_json['country'] #fetch country
-        ip_data.state = api_json['region'] #fetch region
-        ip_data.city = api_json['city'] #fetch city
-        ip_data.zipcode = api_json['postal_code'] #fetch zip
-        ip_data.timezone = api_json['timezone'] #fetch timezone
-        ip_data.lan = api_json['longitude'] #fetch longitude
-        ip_data.lon = api_json['latitude'] #fetch latitude
+        #fetching data from API to store in the controller
+        ip_data.country = self.__api_json['country'] #fetch country
+        ip_data.state = self.__api_json['region'] #fetch region
+        ip_data.city = self.__api_json['city'] #fetch city
+        ip_data.zipcode = self.__api_json['postal_code'] #fetch zip
+        ip_data.timezone = self.__api_json['timezone'] #fetch timezone
+        ip_data.lan = self.__api_json['longitude'] #fetch longitude
+        ip_data.lon = self.__api_json['latitude'] #fetch latitude
+        
     
     #getter for ip value
     @property

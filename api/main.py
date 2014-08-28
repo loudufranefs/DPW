@@ -11,16 +11,27 @@ Class: Design Patterns for Web Programming
 #validate user input (only if Get exists)
 
 import webapp2
-import urllib2 #importing urllib2 for url_info
-import json #parsing json
 from view import IpView #import View Class
 from controller import IpData #import Controller Class
 from model import IpModel #import Model Class
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        #access template that will display the form
         p = FormTemplate()
         self.response.write(p.display_page())
+        
+        #access Model
+        im = IpModel()
+        #access View
+        iv = IpView()
+        #access Controller
+        ic = IpData()
+        
+        
+
+        
+        
         
 
 
