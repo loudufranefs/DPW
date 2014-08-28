@@ -26,6 +26,16 @@ class IpView(object):
         #Generating map from Google API using the values brought in from the IP API
         self.__content += '<div id="map"><img src="http://maps.googleapis.com/maps/api/staticmap?center=' +str(self.__view_array['lat']) + ','+str(self.__view_array['lon'])+'&zoom=12&size=400x300&maptype=roadmap&markers=size:mid%7Ccolor:red%7C'+ str(self.__view_array['city'])+ '" /></div>'
         self.__content += '</div>'
+    
+        #add footer
+        self.__content += '''
+        <div id="credits">
+        Thank you for using this web app.
+        
+        This app is using <a href="http://ip.pycox.com/json/">PyCox</a> API to fetch IP data, <a href="https://developers.google.com/maps/">Google Maps API</a> for the map, and <a href="http://flagpedia.net">Flagpedia</a> to fetch the country flag.
+        </div>
+        
+        '''
 
         
     #getter for content

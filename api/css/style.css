@@ -63,11 +63,15 @@ input[type="submit"]{
 }
 
 /*Results*/
-.resultList {margin:40px auto 0 auto;}
+.resultList {
+    margin:40px auto 0 auto;
+    padding:10px;
+}
 .resultList ul{
     float:left;
     width:40%;
     list-style: none;
+    font-size:0.825em;
 }
 .resultList li{
     border-bottom:1px dotted #ccc;
@@ -76,11 +80,14 @@ input[type="submit"]{
 
 #map {
     float:left;
-    margin-left:40px;
+    margin:20px 0 0 40px;
 }
 #map img{
-    border:10px solid #ccc;
+    border:10px solid #fff;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
 }
+
+
+#credits {display:block; clear:both; border-top:1px solid #ccc; margin:50px 0; padding-top:20px; font-size:0.825em;}
