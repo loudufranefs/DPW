@@ -20,6 +20,7 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         #access template that will display the form
         p = FormTemplate()
+        p.input_fields = [['ip', 'text', 'IP Address'],['submit', 'submit']]
         
         ### IF REQUEST WILL GO HERE ONCE THERE"S A FORM
         
@@ -51,20 +52,27 @@ class FormTemplate(PageTemplate):
         #array to hold form fields
         self.__form_inputs = []
         
-        #build form from form attributes
-        self._form = self._form_start + self.__form_inputs + self._form_end
     
     @property #getter for input fields
-    def inut_fields(self)
+    def input_fields(self):
         pass
     
     @input_fields.setter #setter for input fields
-    def inut_fields(self, fields_array)
-        pass
+    def input_fields(self, fields_array):
+        #settings the value to the value coming in through the function.
+        self.__form_inputs = fields_array
+        
+        #looping through the array
+        for item in fields_array:
+            print item
+            
+    
         
     #POLYMORPHISM - method overriding
     def display_page(self):
-        return self._page_head + self._form + self._page_content + self._page_foot
+        return self._page_head + self._form_start + self._form_end + self._page_content + self._page_foot
+    
+    
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
