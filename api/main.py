@@ -31,8 +31,13 @@ class MainHandler(webapp2.RequestHandler):
         
             iv = IpView() #view instance
             iv.view_array = im.model_array # data from model inserted into them into the view object
-        #add content generated in View object to the page content
-            p._page_content = iv.content
+            #add content generated in View object to the page content
+            #check that GET ip variable is not null value
+            if self.request.GET['ip'] != '':
+                p._page_content = iv.content
+            else:
+                #if there's no value, indicate to user that they should enter an ip address
+                p._page_content = '<div id="alert">Please add an IP Address</div>'
         
         
         self.response.write(p.display_page())
